@@ -9,7 +9,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Homepage />}>
       </Route>
-      <Route path="/planetary-info" element={<PlanetaryInfo />}>
+      <Route path="/planetary-hub" element={<PlanetaryInfo />}>
       </Route>
       <Route path="/stargazing-guide" element={<StargazingGuide />}>
       </Route>

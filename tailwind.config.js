@@ -17,15 +17,14 @@ export default {
       },
       backgroundImage: {
         "homepage-bg": "url('src/assets/astroma-bg.jpg')",
+        'custom-gradient': 'linear-gradient(360deg, rgba(27,27,28,0.730550284629981) 0%, rgba(223,216,216,1) 100%)',
       },
-      keyframes: {
-        opacity: {
-         to : {opacity : 1},
-         from : {opacity: 0}
-        }
+      colors: {
+        cardsCustomGray: 'rgb(27,27,28)',
+      }
+
     },
   },
   plugins: [
   ],
-}
 }
