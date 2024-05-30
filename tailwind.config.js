@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        lato: ['lato', 'sans-serif'],
+        lato: ["lato", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
       screens: {
         xxs: "390px",
@@ -17,14 +18,13 @@ export default {
       },
       backgroundImage: {
         "homepage-bg": "url('src/assets/astroma-bg.jpg')",
-        'custom-gradient': 'linear-gradient(360deg, rgba(27,27,28,0.730550284629981) 0%, rgba(223,216,216,1) 100%)',
+        "custom-gradient":
+          "linear-gradient(360deg, rgba(27,27,28,0.730550284629981) 0%, rgba(223,216,216,1) 100%)",
       },
       colors: {
-        cardsCustomGray: 'rgb(27,27,28)',
-      }
-
+        cardsCustomGray: "rgba(31, 29, 29, 0.406)",
+      },
     },
   },
-  plugins: [
-  ],
-}
+  plugins: [],
+};
