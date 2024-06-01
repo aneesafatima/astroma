@@ -1,9 +1,10 @@
 import React from 'react'
+import {SearchBar} from '.'
 
 function PlanetaryInfo() {
   return (
-    <div>
-      hello from PlanetaryInfo page
+    <div className='bg-black h-screen'> 
+      <SearchBar/>
     </div>
   )
 }

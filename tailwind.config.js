@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         lato: ["lato", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
+        PtSans : ["PT Sans", "sans-serif"]
       },
       screens: {
         xxs: "400px",
