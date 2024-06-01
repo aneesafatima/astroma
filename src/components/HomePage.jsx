@@ -37,7 +37,7 @@ function HomePage() {
 Gaze into the night sky, and you enter a realm of infinite wonder. Each twinkling star tells a story of distant worlds and cosmic mysteries. The dance of celestial bodies, from radiant moons to swirling galaxies, invites us to explore the universe's beauty and secrets. Astronomy isn't just about stars—it's about our place in this vast, breathtaking cosmos, inspiring awe and curiosity in every heart.</p>
   </div></div>
 
-  <div className='about bg-black font-roboto text-white flex justify-around flex-wrap items-center px-8 py-24'>
+  <div className='features bg-black font-roboto text-white flex justify-around flex-wrap items-center px-8 py-24'>
    <div className='w-[30%] space-y-4'>
     <p className='uppercase text-sm font-semibold tracking-wide'>Features</p>
     <h2 className='font-extrabold tracking-wider text-3xl'><span className='border-b-[1px] border-white'>What</span> Astroma <span className='text-gray-700'>Offers</span>.</h2>
