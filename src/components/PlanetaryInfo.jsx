@@ -8,16 +8,16 @@ function PlanetaryInfo() {
 const [coverArticleIndex, setCoverArticleIndex] = useState(0);
   const {data, isFetching} = useGetArticlesByCategoryQuery(searchTerm);
   const [coverArticle, setCoverArticle] = useState(data?.collection?.items[0]);
-  // useEffect(()=>{
+  useEffect(()=>{
    
-   
-  // },[])
+   console.log(searchTerm)
+  },[searchTerm])
 
-  console.log(data)
+ 
   return (
     !isFetching && 
      
-    <div className='bg-black h-screen px-5 overflow-hidden'> 
+    <div className='bg-black h-screen px-5 overflow-hidden transition-all'> 
       <SearchBar setSearchTerm={setSearchTerm}/>
       <div className="flex pt-10">
      <div className='flex mr-20 pr-4 items-start flex-col w-fit' >
@@ -32,9 +32,9 @@ const [coverArticleIndex, setCoverArticleIndex] = useState(0);
    {   coverArticle?.data[0]?.description}
       </p>
       <ul className='text-[#808080] flex text-xs pr-8'>
-        <li className='border-r-[1px] border-[#808080] px-5'>Space and Universe</li>
+        <li className='border-r-[1px] border-[#808080] px-5 flex space-x-1'>{coverArticle?.data[0]?.keywords?.map((el, i) => { if(i<2) return (<li>{el + `${i!==1 ? "," : ""}`}</li>)}) ?? "Space and Universe"}</li>
         <li className='border-r-[1px] border-[#808080] px-5 '>{coverArticle?.data[0]?.photographer?.split("/")[1] ?? "unknown"}</li>
-        <li className='px-5 '>{coverArticle?.data[0]?.date_created
+        <li className='px-5 '>{new Date(coverArticle?.data[0]?.date_created).toLocaleDateString()
 }</li>
       </ul>
      </div>

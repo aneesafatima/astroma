@@ -13,7 +13,7 @@ offset = 0;
 [...document.getElementsByClassName("scroll-item")].map(el => el.style.transform = `translateY(-${offset}%)`)
 }, [coverArticleIndex])
     const scrollItems = () => {
-    offset+=100;
+    offset+=200;
    [...document.getElementsByClassName("scroll-item")].map(el => el.style.transform = `translateY(-${offset}%)`)
     }
       return (
