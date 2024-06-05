@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { CiCircleChevDown, CiCircleChevUp } from "react-icons/ci";
 let offset=0;
 function ArticleItems({data, coverArticleIndex, setCoverArticleIndex, setCoverArticle}) {
+  const titles =[];
+
+  const uniqueTitlesSet = new Set();
+  
+  data.map(el => titles.push(el.data[0].title))
+  console.log(titles)
     
     const changeCoverArticle = (i) =>{
       setCoverArticleIndex(i);
@@ -12,20 +18,27 @@ useEffect(() => {
 offset = 0;
 [...document.getElementsByClassName("scroll-item")].map(el => el.style.transform = `translateY(0)`)
 }, [coverArticleIndex])
+
     const scrollItemsUp = () => {
     offset+=200;
    [...document.getElementsByClassName("scroll-item")].map(el => el.style.transform = `translateY(-${offset}%)`)
     }
+
     const scrollItemsDown = () => {
     offset-=200;
     offset < 0 ? null :
    [...document.getElementsByClassName("scroll-item")].map(el => el.style.transform = `translateY(-${offset}%)`)
     }
+
+
       return (
    <div className="w-[45%] flex  overflow-y-hidden">
     <ul className='text-[#808080] space-y-8  bg-transparent '> 
-        {data.map((el,i) => i === coverArticleIndex ? "" :
-         (
+        {
+        data?.map((el,i) => {
+          if(i !== coverArticleIndex && !uniqueTitlesSet.has(el.data[0].title)){
+              uniqueTitlesSet.add(el.data[0].title);
+        return (
  <li className='scroll-item flex cursor-pointer transition-all' key={i} onClick={() => changeCoverArticle(i)}>
             <img src={el.links[0].href} alt="article-cover" className='w-32 h-32 object-cover mr-3 '/>
             <div className='flex flex-col justify-between'>
@@ -41,9 +54,11 @@ offset = 0;
                 </div>
             </div>
         </li>
-
-
-        ))
+        )
+          }
+        
+      return null
+      })
         
         
         }

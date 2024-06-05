@@ -5,7 +5,7 @@ import {Homepage, PlanetaryInfo, StargazingGuide, AstroQuiz} from './components'
 
 function App() {
   return (
-    <BrowserRouter >
+    <BrowserRouter>
     <Routes>
       <Route path="/" element={<Homepage />}>
       </Route>

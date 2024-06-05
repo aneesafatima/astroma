@@ -6,6 +6,7 @@ import { MdOutlineSearchOff } from "react-icons/md";
 
 
 function PlanetaryInfo() {
+  const titles = [];
   const [searchTerm , setSearchTerm] = useState("");
 const [coverArticleIndex, setCoverArticleIndex] = useState(0);
   const {data, isFetching} = useGetArticlesByCategoryQuery(searchTerm);
@@ -25,13 +26,12 @@ const [coverArticleIndex, setCoverArticleIndex] = useState(0);
 
 console.log(data)
 
-
  
   return (
    !isFetching && 
     <div className='bg-black h-screen px-5 overflow-hidden transition-all'> 
       <SearchBar setSearchTerm={setSearchTerm}/>
-      {!isFetching && data.collection.items.length === 0 && <div className="h-[90vh] flex justify-center items-center bg-transparent text-[#808080] text-[2rem]">No results<MdOutlineSearchOff className='mx-3' color="#808080"/></div>}
+      {!isFetching && data?.collection?.items.length === 0 && <div className="h-[90vh] flex justify-center items-center bg-transparent text-[#808080] text-[2rem]">No results<MdOutlineSearchOff className='mx-3' color="#808080"/></div>}
       <div className="flex pt-10 ">
      <div className='flex mr-20 pr-4 items-start flex-col w-[70%]' >
      <div className='w-fit flex items-center space-x-3'>
@@ -52,7 +52,7 @@ console.log(data)
       </ul>
      </div>
      </div> 
-     <ArticleItems data={data.collection.items} coverArticleIndex = {coverArticleIndex} setCoverArticleIndex={setCoverArticleIndex} setCoverArticle = {setCoverArticle}/>
+     <ArticleItems data={data?.collection?.items} coverArticleIndex = {coverArticleIndex} setCoverArticleIndex={setCoverArticleIndex} setCoverArticle = {setCoverArticle}/>
      </div>
     </div>
     )
