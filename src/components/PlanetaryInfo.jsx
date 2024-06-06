@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import {SearchBar, ArticleItems} from '.'
 import {useGetArticlesByCategoryQuery} from '../services/astronomicalObjects';
-import {MoonLoader} from "react-spinners/MoonLoader";
+import { BallTriangle } from 'react-loader-spinner'
 import { MdOutlineSearchOff } from "react-icons/md";
 
 
 function PlanetaryInfo() {
-  const titles = [];
+
   const [searchTerm , setSearchTerm] = useState("");
 const [coverArticleIndex, setCoverArticleIndex] = useState(0);
   const {data, isFetching} = useGetArticlesByCategoryQuery(searchTerm);
@@ -16,23 +16,21 @@ const [coverArticleIndex, setCoverArticleIndex] = useState(0);
     setCoverArticle(data?.collection?.items[0]);
   },[data])
 
-//   if(isFetching) return  <MoonLoader
-//   color="gray"
-//   loading={!isloading}
-//   size={100}
-//   aria-label="Loading Spinner"
-//   data-testid="loader"
-// />
-
-console.log(data)
 
  
-  return (
-   !isFetching && 
+  return ( 
     <div className='bg-black h-screen px-5 overflow-hidden transition-all'> 
       <SearchBar setSearchTerm={setSearchTerm}/>
+      {isFetching &&  <div className="flex justify-center items-center h-[90vh]"><BallTriangle
+  height={70}
+  width={70}
+  radius={3}
+  color="#808080"
+  ariaLabel="ball-triangle-loading"
+  visible={true}
+  /></div>  }
       {!isFetching && data?.collection?.items.length === 0 && <div className="h-[90vh] flex justify-center items-center bg-transparent text-[#808080] text-[2rem]">No results<MdOutlineSearchOff className='mx-3' color="#808080"/></div>}
-      <div className="flex pt-10 ">
+      {!isFetching && <div className="flex pt-10 ">
      <div className='flex mr-20 pr-4 items-start flex-col w-[70%]' >
      <div className='w-fit flex items-center space-x-3'>
      <h3 className='text-white text-5xl font-light leading-[1.3] w-[400px]'>
@@ -53,7 +51,7 @@ console.log(data)
      </div>
      </div> 
      <ArticleItems data={data?.collection?.items} coverArticleIndex = {coverArticleIndex} setCoverArticleIndex={setCoverArticleIndex} setCoverArticle = {setCoverArticle}/>
-     </div>
+     </div> }
     </div>
     )
   
