@@ -1,6 +1,7 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {Homepage, PlanetaryInfo, StargazingGuide, AstroQuiz} from './components';
+import {Homepage, PlanetaryInfo, StargazingGuide, AstroQuiz, Planets} from './components';
+
 
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
       <Route path="/stargazing-guide" element={<StargazingGuide />}>
       </Route>
       <Route path="/astro-quiz" element={<AstroQuiz />}>
+      </Route>
+      <Route path = "/planets" element={<Planets/>}> 
+        
       </Route>
     </Routes>
     
