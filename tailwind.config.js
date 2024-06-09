@@ -29,8 +29,7 @@ export default {
         cardsCustomGray: "rgba(31, 29, 29, 0.406)",
       },
       boxShadow: {
-        "planet-shadow":
-          "0 0 60px rgba(255, 153, 0, 0.6), 0 0 120px rgba(255, 153, 0, 0.4), 0 0 180px rgba(255, 153, 0, 0.2)",
+        "planet-shadow": "0px 4px 8px rgba(0,0,0,0.6)",
       },
       keyframes: {
         rotate: {
@@ -52,6 +51,9 @@ export default {
         "white-outline":
           "0 0 0 white, 0 0 0.5rem white, 0 0 1rem white, 0 0 2rem white",
       },
+      backgroundPosition: {
+        "planet-pos": "0 -400px",
+      },
     },
   },
   plugins: [
@@ -60,7 +62,6 @@ export default {
         ".text-shadow": {
           "text-shadow":
             "0 0 0 #FFE4B5,  -1px -1px 0 #FFE4B5, 1px -1px 0 #FFE4B5,-1px 1px 0 #FFE4B5, 1px 1px 0 #FFE4B5",
-            
         },
       });
     },
