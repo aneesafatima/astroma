@@ -4,12 +4,14 @@
     src: url('../public/fonts/space_age/space-age.ttf') format('truetype');
 }
 
-.test {
-    color: transparent;
-}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-
+/* 
+body{
+    color: #FFD700;
+    background: #FFA500;
+} */
