@@ -13,7 +13,7 @@ function Planets() {
       'saturn', 
       'uranus',
        'neptune'] 
-  const [currentPlanet, setCurrentPlanet] = useState(1);
+  const [currentPlanet, setCurrentPlanet] = useState(0);
   const textShadow = "0 0 0 #,  -1px -1px 0 #, 1px -1px 0 #,-1px 1px 0 #, 1px 1px 0 #".replace(/#/g, planets[currentPlanet].textColor)
   const colorCombo = {
     lineColor : "",
@@ -68,9 +68,9 @@ function Planets() {
        <div className=''>
 
          <img src={planets[currentPlanet].image} className="w-[800px] h-[800px]  absolute left-1/2  -bottom-[80%] -translate-x-1/2  rounded-[50%]
-      animate-rotatePlanet  shadow-planet-shadow" alt="planet" />
+       shadow-planet-shadow object-cover animate-rotate" alt="planet" />
       <div className="w-[800px] h-[800px] absolute left-1/2  -bottom-[80%] -translate-x-1/2   rounded-[50%]
-         bg-gradient-to-r from-transparent via-transparent to-black"></div>
+         bg-gradient-to-l from-black via-transparent to-black"></div>
   </div>
          </div>
       )

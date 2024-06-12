@@ -31,19 +31,26 @@ export default {
       boxShadow: {
         "planet-shadow": "0px 4px 8px rgba(0,0,0,0.6)",
       },
+      // keyframes: {
+        // rotate: {
+        //   from: {
+        //     backgroundPosition: "0 0",
+        //   },
+        //   to: {
+        //     backgroundPosition: "-8192px 0",
+        //   },
+      //   },
+
       keyframes: {
+          
         rotate: {
-          from: {
-            backgroundPosition: "0 0",
-          },
           to: {
-            backgroundPosition: "-8192px 0",
+            objectPosition: "100%",
           },
-        },
-        animation: {
-          rotatePlanet: "rotate 15s linear infinite",
-        },
-      },
+      }},
+    animation: {
+      rotate: "rotate 20s linear alternate infinite"
+  },
       transitionProperty: {
         top: "top",
       },
@@ -51,9 +58,7 @@ export default {
         "white-outline":
           "0 0 0 white, 0 0 0.5rem white, 0 0 1rem white, 0 0 2rem white",
       },
-      backgroundPosition: {
-        "planet-pos": "0 -400px",
-      },
+     
     },
   },
   plugins: [
