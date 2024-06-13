@@ -5,6 +5,7 @@ import venusBg from '../assets/venus-bg.jpg';
 import jupiterBg from '../assets/jupiter-bg.jpg';
 import saturnBg from '../assets/saturn-bg.jpg';
 import neptuneBg from '../assets/neptune.jpg';
+import { useGetPlanetInfo } from '../services/planetsApi';
 
 
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -18,12 +19,14 @@ function Planets() {
      {name :'saturn', bgColor : "#d2b96f", textColor : "#FFFACD", image: saturnBg}, 
      {name :'neptune', bgColor : "#00204a", textColor : "#1259a4", image: neptuneBg}] 
   const [currentPlanet, setCurrentPlanet] = useState(0);
+  const {data, isFetching} = useGetPlanetInfo(Planets[currentPlanet].name);
   const textShadow = "0 0 0 #,  -1px -1px 0 #, 1px -1px 0 #,-1px 1px 0 #, 1px 1px 0 #".replace(/#/g, planets[currentPlanet].textColor)
   const colorCombo = {
     lineColor : "",
     textColor: ""
   }
-  // 9EC9CF
+
+  const [showPlanetInfo, setShowPlanetInfo] = useState(false)
  
    const planetAfter = () =>{
     if(currentPlanet <= 4 )
@@ -55,6 +58,19 @@ function Planets() {
     document.getElementById('planet').style.color = `${planets[currentPlanet].bgColor}`;
    }
 
+   const handlePlanetsInfo = () => {
+  setShowPlanetInfo(true)
+
+
+      //  document.getElementById('planet-info-container').style.justifyContent = "space-between";
+      //  document.querySelector('.test').style.transform = "translate(10px)";
+      //  document.querySelector('.test').style.opacity = "1";
+       
+       
+      
+      
+   }
+
   return (
       
       <div className="h-screen pt-10 px-10 overflow-hidden transition-all" style={{backgroundColor: planets[currentPlanet].bgColor}}>
@@ -63,20 +79,39 @@ function Planets() {
   
   
        <div><span className="w-[0%] block h-[0.4px] transition-all duration-[2000ms]" id='line' style={{backgroundColor: planets[currentPlanet].textColor}}></span></div> 
-        < div className=' flex justify-center items-center h-[90vh]'>     
-        <h1 className="font-space-age text-9xl w-[0%] opacity-0 absolute left-1/2 trasition-all duration-1000 -translate-x-1/2 cursor-default  bg-clip-text  h-0  transition-all top-[13%] tracking-tighter" style={{color: planets[currentPlanet].bgColor, textShadow}} id='planet'>{planets[currentPlanet].name}
+        < div className= {`flex ${!showPlanetInfo ? "justify-center" : "justify-normal"}  items-center h-[90vh]`} id="planet-info-container">     
+        <h1 className={`font-space-age text-9xl w-[0%] opacity-0 absolute left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  h-0  transition-all duration-1000 top-[13%] tracking-tighter`} style={{ color: planets[currentPlanet].bgColor,textShadow}} id='planet'>{planets[currentPlanet].name}
            </h1>
   
   
-          <button className={`px-3 py-1 hover:${colorCombo.textColor} rounded-[10px]  border-[1px]    hover:scale-95  active:scale-95 relative z-10 text-xs font-bold font-roboto  after:w-full after:content-[''] after:absolute after:z-[-1] after:top-full after:left-0 after:${colorCombo.lineColor} hover:after:top-0  after:h-0 hover:after:h-full overflow-hidden after:transition-all after:duration-700`} style={{color: planets[currentPlanet].textColor, border: `1px solid ${planets[currentPlanet].textColor}`}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseleave}>Explore Surface</button>
+          <button className={`px-3 py-1 hover:${colorCombo.textColor} rounded-[10px]  border-[1px]    hover:scale-95  active:scale-95 relative z-10 text-xs font-bold font-roboto  after:w-full after:content-[''] after:absolute after:z-[-1] after:top-full after:left-0 after:${colorCombo.lineColor} hover:after:top-0  after:h-0 hover:after:h-full overflow-hidden after:transition-all after:duration-700 ${showPlanetInfo ? "hidden" : null}`} id="explore-button" style={{color: planets[currentPlanet].textColor, border: `1px solid ${planets[currentPlanet].textColor}`}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseleave} onClick={handlePlanetsInfo}>Explore Surface</button>
+
+          <div className={`${!showPlanetInfo ? "hidden" : "flex justify-between w-full text-sm uppercase"}`} style={{color: planets[currentPlanet].textColor}} id="planets-info">
+            <div className={``} id="general-info">
+              <ul className='leading-8 test'>
+              <li className='font-lato font-medium'>Distance from sun <li className='font-bold text-[#FF4500]'>9809</li></li>
+              <li className='font-lato font-medium'>Distance from sun <li className='font-bold text-[#FF4500]'>9809</li></li>
+              <li className='font-lato font-medium'>Distance from sun <li className='font-bold text-[#FF4500]'>9809</li></li>
+              <li className='font-lato font-medium'>Distance from sun <li className='font-bold text-[#FF4500]'>9809</li></li>
+              
+              </ul> </div>
+          <div className='' id="physical-info"> 
+          <ul className='leading-8'>
+          <li className='font-lato font-medium'>Distance from sun <li className='font-bold text-[#FF4500]'>9809</li></li>
+          <li className='font-lato font-medium'>Distance from sun <li className='font-bold text-[#FF4500]'>9809</li></li>
+          <li className='font-lato font-medium'>Distance from sun <li className='font-bold text-[#FF4500]'>9809</li></li>
+          <li className='font-lato font-medium'>Distance from sun <li className='font-bold text-[#FF4500]'>9809</li></li>
+              
+              </ul>   </div>
+          </div>
         </div>
        
        <div className=''>
 
-         <img src={planets[currentPlanet].image} className="w-[800px] h-[800px]  absolute left-1/2 top-[40%]  -translate-x-1/2  rounded-[50%]
-       shadow-planet-shadow object-cover animate-rotate transition-all duration-1000" alt="planet" />
-      <div className="w-[800px] h-[800px] absolute left-1/2 -translate-x-1/2 top-[40%]  rounded-[50%]
-         bg-gradient-to-l from-black via-transparent to-black"></div>
+         <img src={planets[currentPlanet].image} className="w-[800px] h-[800px] absolute top-[40%]   left-1/2 -translate-x-1/2  rounded-[50%] transition-all duration-[2000ms]
+       shadow-planet-shadow object-cover  animate-rotate" alt="planet" id="planet-figure"/>
+      <div className="w-[800px] h-[800px] absolute top-[40%] left-1/2 -translate-x-1/2 transition-all duration-[2000ms] rounded-[50%]
+         bg-gradient-to-l from-black via-transparent to-black" id="planet-figure-overlay"></div>
   </div>
          </div>
       )

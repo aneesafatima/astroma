@@ -3,15 +3,12 @@
     font-family: 'Space Age';
     src: url('../public/fonts/space_age/space-age.ttf') format('truetype');
 }
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-/* 
-body{
-    color: #FFD700;
-    background: #FFA500;
+/* .test{
+    transform: translate(-40px);
+    opacity: 0;
+transition: all 2s ease-in-out;
 } */
+

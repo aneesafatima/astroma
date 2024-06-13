@@ -31,15 +31,6 @@ export default {
       boxShadow: {
         "planet-shadow": "0px 4px 8px rgba(0,0,0,0.6)",
       },
-      // keyframes: {
-        // rotate: {
-        //   from: {
-        //     backgroundPosition: "0 0",
-        //   },
-        //   to: {
-        //     backgroundPosition: "-8192px 0",
-        //   },
-      //   },
 
       keyframes: {
           
@@ -62,13 +53,5 @@ export default {
     },
   },
   plugins: [
-    function ({ addUtilities }) {
-      addUtilities({
-        ".text-shadow": {
-          "text-shadow":
-            "0 0 0 #FFE4B5,  -1px -1px 0 #FFE4B5, 1px -1px 0 #FFE4B5,-1px 1px 0 #FFE4B5, 1px 1px 0 #FFE4B5",
-        },
-      });
-    },
   ],
 };
