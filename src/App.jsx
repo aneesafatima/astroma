@@ -1,6 +1,6 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {Homepage, PlanetaryInfo, StargazingGuide, AstroQuiz, Planets} from './components';
+import {Homepage, PlanetaryInfo, StargazingGuide, Planets} from './components';
 
 
 
@@ -10,13 +10,12 @@ function App() {
     <Routes>
       <Route path="/" element={<Homepage />}>
       </Route>
-      <Route path="/planetary-hub" element={<PlanetaryInfo />}>
+      <Route path="/planetary-hub" element={<Planets />}>
       </Route>
       <Route path="/stargazing-guide" element={<StargazingGuide />}>
       </Route>
-      <Route path="/astro-quiz" element={<AstroQuiz />}>
-      </Route>
-      <Route path = "/planets" element={<Planets/>}> 
+  
+      <Route path = "/cosmic-gallery" element={<PlanetaryInfo/>}> 
         
       </Route>
     </Routes>

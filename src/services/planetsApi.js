@@ -10,4 +10,4 @@ export const planetsApi = createApi({
   }),
 })
 
-export const {useGetPlanetInfo} = planetsApi;
+export const {useGetPlanetInfoQuery} = planetsApi;

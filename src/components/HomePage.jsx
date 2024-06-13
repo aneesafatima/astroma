@@ -26,7 +26,7 @@ function HomePage() {
   <Link to="/stargazing-guide" className='hover:text-white'>Stargazing</Link>
     </li>
     <li>
-  <Link to="/astro-quiz"  className='hover:text-white'>AstroQuiz</Link>
+  <Link to="/cosmic-gallery"  className='hover:text-white'>Cosmic Gallery</Link>
     </li>
   </ul>
      <h1 className={`font-lato text-[rgba(245, 245, 245, 0.724)] font-extralight tracking-[20px] sm:tracking-[27px] absolute bottom-[10%] sm:bottom-[8%] left-[50%] translate-x-[-50%] uppercase text-2xl xs:text-4xl sm:text-5xl md:text-6xl opacity-${visible ? '1' : '0'} transition-opacity duration-700  ease-in`}>Astronomy</h1>

@@ -11,7 +11,6 @@ function PlanetaryInfo() {
 const [coverArticleIndex, setCoverArticleIndex] = useState(0);
   const {data, isFetching} = useGetArticlesByCategoryQuery(searchTerm);
   const [coverArticle, setCoverArticle] = useState("");
-  const [isloading, setIsLoading] = useState(true)
   useEffect(()=>{
     setCoverArticle(data?.collection?.items[0]);
   },[data])
