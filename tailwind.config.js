@@ -29,7 +29,7 @@ export default {
         cardsCustomGray: "rgba(31, 29, 29, 0.406)",
       },
       boxShadow: {
-        "planet-shadow": "0px 4px 8px rgba(0,0,0,0.6)",
+        "planet-shadow": "0px 4px 8px rgba(0,0,0,0.6)"
       },
 
       keyframes: {

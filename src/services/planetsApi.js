@@ -9,5 +9,15 @@ export const planetsApi = createApi({
     }),
   }),
 })
+export const wikiApi = createApi({
+ reducerPath: 'wikiApi',
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://en.wikipedia.org/api/rest_v1/page/' }),
+  endpoints: (builder) => ({
+    getPlanetDef: builder.query({
+      query: (planet) => `/summary/${planet}_(planet)`,
+    }),
+  }),
+})
 
 export const {useGetPlanetInfoQuery} = planetsApi;
+export const {useGetPlanetDefQuery} = wikiApi;
