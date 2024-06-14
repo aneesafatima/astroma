@@ -6,6 +6,7 @@ import jupiterBg from '../assets/jupiter-bg.jpg';
 import saturnBg from '../assets/saturn-bg.jpg';
 import neptuneBg from '../assets/neptune.jpg';
 import { useGetPlanetDefQuery, useGetPlanetInfoQuery } from '../services/planetsApi';
+import { handleMouseEnter, handleMouseleave } from '../helpers';
 
 
 
@@ -14,11 +15,10 @@ import { PlanetsData } from '.';
 
 function Planets() {
 
-  //fix definition issue
   //heading color issue
+  //add loader
   //fix explore surface button issue
   //refactor into helpers
-  //if time make responsive
 
    const planets = [
      {name : 'mercury', bgColor : "#DCDCDC", textColor : "#fff",image : mercuryBg },
@@ -32,10 +32,7 @@ function Planets() {
   const {data, isFetching} = useGetPlanetInfoQuery(planets[currentPlanet].name);
     const {data:planetDef, isFetching:isLoading} = useGetPlanetDefQuery(planets[currentPlanet].name);
   const textShadow = "0 0 0 #,  -1px -1px 0 #, 1px -1px 0 #,-1px 1px 0 #, 1px 1px 0 #".replace(/#/g, planets[currentPlanet].textColor)
-  const colorCombo = {
-    lineColor : "",
-    textColor: ""
-  }
+
   const [showPlanetInfo, setShowPlanetInfo] = useState(false)
 
  
@@ -54,18 +51,6 @@ function Planets() {
    }, 800)
 
    
-   const handleMouseEnter = () => {
-    document.getElementById('planet').style.height = "100%"
-    document.getElementById('planet').classList.remove("text-shadow");
-    document.getElementById('planet').style.color = `${planets[currentPlanet].textColor}`;
-    
-   }
-   const handleMouseleave = () => {
-   document.getElementById('planet').style.height = "0"
-   document.getElementById('planet').classList.add("text-shadow");
-    document.getElementById('planet').style.color = `${planets[currentPlanet].bgColor}`;
- 
-   }
 
    const handlePlanetsInfo = () => {
   setShowPlanetInfo(true)
@@ -92,7 +77,7 @@ function Planets() {
            </h1>
   
   
-          <button className={`px-3 py-1 hover:${colorCombo.textColor} rounded-[10px]  border-[1px]    hover:scale-95  active:scale-95 relative z-10 text-xs font-bold font-roboto  after:w-full after:content-[''] after:absolute after:z-[-1] after:top-full after:left-0 after:${colorCombo.lineColor} hover:after:top-0  after:h-0 hover:after:h-full overflow-hidden after:transition-all after:duration-700 ${showPlanetInfo ? "hidden" : null}`} id="explore-button" style={{color: planets[currentPlanet].textColor, border: `1px solid ${planets[currentPlanet].textColor}`}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseleave} onClick={handlePlanetsInfo}>Explore Surface</button>
+          <button className={`px-3 py-1 rounded-[10px]  border-[1px]    hover:scale-95  active:scale-95 relative z-10 text-xs font-bold font-roboto overflow-hidden ${showPlanetInfo ? "hidden" : null}`} id="explore-button" style={{color: planets[currentPlanet].textColor, border: `1px solid ${planets[currentPlanet].textColor}`}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseleave} onClick={handlePlanetsInfo}>Explore Surface</button>
 
           <PlanetsData showPlanetInfo = {showPlanetInfo} planets = {planets} currentPlanet = {currentPlanet} planetDef = {planetDef} data={data}/>
         </div>
