@@ -14,7 +14,6 @@ function App() {
       </Route>
       <Route path="/stargazing-guide" element={<StargazingGuide />}>
       </Route>
-  
       <Route path = "/cosmic-gallery" element={<PlanetaryInfo/>}> 
         
       </Route>
