@@ -7,9 +7,6 @@ import saturnBg from '../assets/saturn-bg.jpg';
 import neptuneBg from '../assets/neptune.jpg';
 import { useGetPlanetDefQuery, useGetPlanetInfoQuery } from '../services/planetsApi';
 import { handleMouseEnter, handleMouseleave } from '../helpers';
-
-
-
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { PlanetsData } from '.';
 
@@ -19,6 +16,7 @@ function Planets() {
   //add loader
   //fix explore surface button issue
   //refactor into helpers
+  //add home icon
 
    const planets = [
      {name : 'mercury', bgColor : "#DCDCDC", textColor : "#fff",image : mercuryBg },
@@ -53,7 +51,7 @@ function Planets() {
    
 
    const handlePlanetsInfo = () => {
-  setShowPlanetInfo(true)
+    setShowPlanetInfo(true);
       //  document.getElementById('planet-info-container').style.justifyContent = "space-between";
       //  document.querySelector('.test').style.transform = "translate(10px)";
       //  document.querySelector('.test').style.opacity = "1";
@@ -77,7 +75,7 @@ function Planets() {
            </h1>
   
   
-          <button className={`px-3 py-1 rounded-[10px]  border-[1px]    hover:scale-95  active:scale-95 relative z-10 text-xs font-bold font-roboto overflow-hidden ${showPlanetInfo ? "hidden" : null}`} id="explore-button" style={{color: planets[currentPlanet].textColor, border: `1px solid ${planets[currentPlanet].textColor}`}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseleave} onClick={handlePlanetsInfo}>Explore Surface</button>
+          <button className={`px-3 py-1 rounded-[10px]  border-[1px]    hover:scale-95  active:scale-95 relative z-10 text-xs font-bold font-roboto overflow-hidden ${showPlanetInfo ? "hidden" : null}`} id="explore-button" style={{color: planets[currentPlanet].textColor, border: `1px solid ${planets[currentPlanet].textColor}`}} onMouseEnter={() => handleMouseEnter(planets, currentPlanet)} onMouseLeave={() => handleMouseleave(planets, currentPlanet, showPlanetInfo)} onClick={handlePlanetsInfo}>Explore Surface</button>
 
           <PlanetsData showPlanetInfo = {showPlanetInfo} planets = {planets} currentPlanet = {currentPlanet} planetDef = {planetDef} data={data}/>
         </div>
@@ -90,9 +88,6 @@ function Planets() {
   </div>
          </div>
       )
-
-
-
     }
  
 

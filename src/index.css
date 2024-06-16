@@ -10,7 +10,7 @@
 @tailwind components;
 @tailwind utilities;
 
-ul > li > li{
+ul > li > li {
     text-transform: lowercase;
     font-weight: bold;
     color : #FF4500;
