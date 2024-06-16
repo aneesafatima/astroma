@@ -24,13 +24,19 @@ export default {
           "linear-gradient(360deg, rgba(27,27,28,0.730550284629981) 0%, rgba(223,216,216,1) 100%)",
         "plants-container-bg":
           "radial-gradient(circle at center, #000 30%, #111 70%, #000 100%)",
+          "stargazing-bg" :"url('src/assets/stargazing-guide-bg.jpg')"
       },
       colors: {
         cardsCustomGray: "rgba(31, 29, 29, 0.406)",
       },
       boxShadow: {
-        "planet-shadow": "0px 4px 8px rgba(0,0,0,0.6)"
+        "planet-shadow": "0px 4px 8px rgba(0,0,0,0.6)",
+        "btn-shadow": "0 2px 10px 0 rgba(255, 255, 255, 0.5)",
+        "btn-shadow-hover": "0 2px 10px 0 rgba(255, 255, 255, 0.8)",
+
+
       },
+  
 
       keyframes: {
           
