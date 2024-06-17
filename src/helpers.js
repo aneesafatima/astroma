@@ -14,3 +14,34 @@ export const handleMouseleave = (planets, currentPlanet, showPlanetInfo) => {
       : planets[currentPlanet].bgColor
   }`;
 };
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      console.log(error.code)
+      break;
+    case error.POSITION_UNAVAILABLE:
+      console.log(error.code)
+      break;
+    case error.TIMEOUT:
+      console.log(error.code)
+      break;
+    case error.UNKNOWN_ERROR:
+    console.log(error.code)
+      break;
+  }
+}
+
+export function getLocation() {
+  return new Promise((resolve, reject) => {
+    if (navigator.geolocation){
+      navigator.geolocation.getCurrentPosition((position) => {
+       resolve({ latitude: position.coords.latitude, longitude : position.coords.longitude })
+      }, (error) => reject(error))
+    }
+    else {
+      console.log("GeoLocation is not supported")
+    }
+  })
+  
+}
