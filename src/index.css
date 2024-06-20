@@ -16,6 +16,11 @@ ul > li > li {
     color : #FF4500;
     }
 
+ul > li > span{
+    color:#fff;
+    font-weight: 300;
+}    
+
 
 body{
     background: #181717b3;

@@ -6,9 +6,9 @@ import starGazeIcon from "/assets/stargaze.png"
 
 function Features() {
   return (
-    <div className='features bg-black font-roboto text-white flex justify-around flex-wrap items-center px-8 py-24'>
-   <div className='w-[30%] space-y-4'>
-    <p className='uppercase text-sm font-semibold tracking-wide'>Features</p>
+    <div className='features bg-black font-roboto text-white flex justify-around flex-wrap items-center px-8 py-24 space-y-10'>
+   <div className='sm:w-[30%] space-y-4'>
+    <p className='uppercase text-sm font-semibold tracking-wide w-full sm:w-fit'>Features</p>
     <h2 className='font-extrabold tracking-wider text-3xl'><span className='border-b-[1px] border-white'>What</span> Astroma <span className='text-gray-700'>Offers</span>.</h2>
   <p className='leading-6 text-sm'>Welcome to Astroma, your gateway to the cosmos! Whether you're a seasoned stargazer or an aspiring astronomer, Astroma is your digital universe, brimming with resources to fuel your curiosity. Delve into the depths of space with our comprehensive guides and interactive tools.</p>
    </div>

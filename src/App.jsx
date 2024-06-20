@@ -1,6 +1,6 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {Homepage, PlanetaryInfo, StargazingGuide, Planets} from './components';
+import {Homepage, CosmicGallery, StargazingGuide, Planets} from './components';
 
 
 
@@ -14,7 +14,7 @@ function App() {
       </Route>
       <Route path="/stargazing-guide" element={<StargazingGuide />}>
       </Route>
-      <Route path = "/cosmic-gallery" element={<PlanetaryInfo/>}> 
+      <Route path = "/cosmic-gallery" element={<CosmicGallery/>}> 
         
       </Route>
     </Routes>
