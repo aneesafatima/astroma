@@ -5,3 +5,4 @@ export { default as SearchBar } from "./SearchBar";
 export { default as ArticleItems } from "./ArticleItems";
 export { default as Planets } from "./Planets";
 export { default as PlanetsData } from "./PlanetsData";
+export { default as Features } from "./Features";

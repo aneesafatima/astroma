@@ -20,7 +20,7 @@ export const eventsApi = createApi({
       const authString = btoa(
         ``
       );
-      console.log(authString)
+      console.log(authString);
       headers.Authorization = `Basic ${authString}`;
       return headers;
     },
@@ -28,12 +28,12 @@ export const eventsApi = createApi({
   endpoints: (builder) => ({
     getEventsApi: builder.query({
       query: ({ body, lat, lng, elevation }) => {
-        const toDate = new Date(Date.now() + (1000 * 60 * 60 * 24 * 30))
+        const toDate = new Date(Date.now() + 1000 * 60 * 60 * 24 * 30)
           .toISOString()
-          .substring(0,10);
-        console.log(toDate)
-        const fromDate = new Date().toISOString().substring(0,10);
-        console.log(fromDate)
+          .substring(0, 10);
+        console.log(toDate);
+        const fromDate = new Date().toISOString().substring(0, 10);
+        console.log(fromDate);
         const currentTime = new Date().toLocaleTimeString("en-US", {
           hour12: false,
         });
@@ -41,7 +41,7 @@ export const eventsApi = createApi({
         console.log(
           `/bodies/events/${body}?latitude=${lat}&longitude=${lng}&elevation=${elevation}&from_date=${fromDate}&to_date=${toDate}&time=${currentTime}`
         );
-        return `/bodies/events/${body}?latitude=${lat}&longitude=${lng}&elevation=${elevation}&from_date=${fromDate}&to_date=${toDate}&time=${currentTime}`
+        return `/bodies/events/${body}?latitude=${lat}&longitude=${lng}&elevation=${elevation}&from_date=${fromDate}&to_date=${toDate}&time=${currentTime}`;
       },
     }),
   }),

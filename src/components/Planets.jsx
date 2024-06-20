@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import marsBg from '../assets/mars-3d-bg.jpg';
-import mercuryBg from '../assets/mercury-bg.jpg';
-import venusBg from '../assets/venus-bg.jpg';
-import jupiterBg from '../assets/jupiter-bg.jpg';
-import saturnBg from '../assets/saturn-bg.jpg';
-import neptuneBg from '../assets/neptune.jpg';
+import marsBg from '/assets/mars-3d-bg.jpg';
+import mercuryBg from '/assets/mercury-bg.jpg';
+import venusBg from '/assets/venus-bg.jpg';
+import jupiterBg from '/assets/jupiter-bg.jpg';
+import saturnBg from '/assets/saturn-bg.jpg';
+import neptuneBg from '/assets/neptune.jpg';
 import { useGetPlanetDefQuery, useGetPlanetInfoQuery } from '../services/planetsApi';
 import { handleMouseEnter, handleMouseleave } from '../helpers';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";

@@ -19,12 +19,12 @@ export default {
         "2xl": "1536px",
       },
       backgroundImage: {
-        "homepage-bg": "url('src/assets/astroma-bg.jpg')",
+        "homepage-bg": "url('/assets/astroma-bg.jpg')",
         "custom-gradient":
           "linear-gradient(360deg, rgba(27,27,28,0.730550284629981) 0%, rgba(223,216,216,1) 100%)",
         "plants-container-bg":
           "radial-gradient(circle at center, #000 30%, #111 70%, #000 100%)",
-          "stargazing-bg" :"url('src/assets/stargazing-guide-bg.jpg')"
+          "stargazing-bg" :"url('/assets/stargazing-guide-bg.jpg')"
       },
       colors: {
         cardsCustomGray: "rgba(31, 29, 29, 0.406)",
