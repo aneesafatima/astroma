@@ -34,8 +34,8 @@ function HomePage() {
   <p className={`sm:w-[40%] leading-9 ${ showAbout? "opacity-1" : "opacity-30"} font-medium text-white flex items-center p-10 xs:p-5` }>
 Gaze into the night sky, and you enter a realm of infinite wonder. Each twinkling star tells a story of distant worlds and cosmic mysteries. The dance of celestial bodies, from radiant moons to swirling galaxies, invites us to explore the universe's beauty and secrets. Astronomy isn't just about stars—it's about our place in this vast, breathtaking cosmos, inspiring awe and curiosity in every heart.</p>
   </div></div>
-  <Features/>
  <EarthInfo/>
+ <Features/>
     </>
   )
 }

@@ -50,23 +50,23 @@ function ArticleItems({ data, coverArticleIndex, setCoverArticleIndex, setCoverA
   };
 
   return (
-    <div className="w-[45%] flex overflow-y-hidden">
-      <ul className='text-[#808080] space-y-8 bg-transparent'>
+    <div className="w-full md:w-[45%] md:h-screen overflow-hidden">
+      <ul className='text-[#808080]  md:space-y-7 space-x-10 md:space-x-0 bg-transparent flex flex-row md:flex-col overflow-auto'>
         {
           data?.map((el, i) => {
             if (i !== coverArticleIndex && !uniqueTitlesSet.has(el.data[0].title)) {
               uniqueTitlesSet.add(el.data[0].title);
               articlesNum+=1;
               return (
-                <li className='scroll-item flex cursor-pointer transition-all' key={i} onClick={() => changeCoverArticle(i)}>
-                  <img src={el.links[0].href} alt="article-cover" className='w-32 h-32 object-cover mr-3 ' />
-                  <div className='flex flex-col justify-between'>
+                <li className=' max-w-fit md:w-fit bg-red-500 md:space-x-0 space-x-5 scroll-item flex items-center cursor-pointer transition-all' key={i} onClick={() => changeCoverArticle(i)}>
+                  <img src={el.links[0].href} alt="article-cover" className='w-24 h-24 md:w-32 md:h-32 object-cover md:mr-3 ' />
+                  <div className='flex flex-col text-xs md:justify-between w-fit'>
                     <div className='info text-xs pt-3'>
                       <span className='pr-3 border-r-[1px] border-[#808080]'>{el.data[0].photographer?.split("/")[1] ?? "unknown"}</span>
                       <span className='px-3'>{new Date(el.data[0].date_created).toLocaleDateString()}</span>
                     </div>
-                    <h2 className='text-white '>{el.data[0].title.substring(0, 40)}...</h2>
-                    <div className='info text-xs pb-3 space-x-1'>
+                    <h2 className='text-white text-sm md:text-lg '>{el.data[0].title.substring(0, 40)}...</h2>
+                    <div className='info text-xs pb-3 space-x-1 w-fit'>
                       {el.data[0].keywords?.map((keyword, i) => { if (i < 2) return (<span className=''>{keyword + `${i !== 1 ? "," : ""}`}</span>) }) ?? "Space and Universe"}
                     </div>
                   </div>
@@ -77,7 +77,7 @@ function ArticleItems({ data, coverArticleIndex, setCoverArticleIndex, setCoverA
           })
         }
       </ul>
-      <div className='flex flex-col absolute right-10 h-[85vh] justify-between bottom-2'>
+      <div className='hidden md:flex flex-col fixed right-10 h-[85vh] justify-between bottom-2'>
         <CiCircleChevDown color="white" size={30} className='cursor-pointer hover:scale-95 active:scale-95 ' onClick={scrollItemsUp} />
         <CiCircleChevUp color="white" className='hover:scale-95 active:scale-95 cursor-pointer' onClick={scrollItemsDown} size={30} />
       </div>

@@ -10,18 +10,20 @@
 @tailwind components;
 @tailwind utilities;
 
-ul > li > li {
+#planets-info ul > li > li {
     text-transform: lowercase;
     font-weight: bold;
     color : #FF4500;
     }
 
-ul > li > span{
+#earth-info  li > span{
     color:#fff;
     font-weight: 300;
 }    
 
-
-body{
-    background: #181717b3;
+#tag{
+    color: #FF4500;
+}
+.active{
+color: white;
 }
