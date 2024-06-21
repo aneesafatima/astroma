@@ -31,7 +31,7 @@ const [coverArticleIndex, setCoverArticleIndex] = useState(0);
 
       {!isFetching && data?.collection?.items.length === 0 && <div className="h-[90vh] flex justify-center items-center bg-transparent text-[#808080] text-[2rem]">No results<MdOutlineSearchOff className='mx-3' color="#808080"/></div>}
 
-      {!isFetching && <div className="flex pt-10 flex-col md:flex-row flex-wrap md:flex-nowrap space-y-10 ">
+      {!isFetching && data?.collection?.items.length !== 0 && <div className="flex pt-10 flex-col md:flex-row flex-wrap md:flex-nowrap space-y-10 ">
      <div className='flex mr-10 pr-4 space-y-6 justify-center md:justify-normal items-start flex-col flex-wrap w-full md:w-[70%]' >
      <div className='w-full flex flex-col md:flex-row items-center space-x-3 space-y-6'>
      <h3 className='text-white text-4xl font-light leading-[1.3] w-full text-center  md:w-[400px]'>

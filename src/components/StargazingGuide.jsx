@@ -3,25 +3,27 @@ import { getLocation } from '../helpers';
 import { useGetElevationQuery, useGetEventsApiQuery } from '../services/StargazingApi';
 
 function StargazingGuide() {
+  console.log("Hello from stargazing guide !")
   const [geoData, setGeoData] = useState(); 
   console.log(geoData)
  const {data : elevation, isFetching} = useGetElevationQuery({lat : geoData?.lat, lng : geoData?.lng}, {
   skip : !geoData?.lat || !geoData?.lng
  })
- console.log(elevation)
-//  const {data : events} = useGetEventsApiQuery({lat : geoData?.lat, lng : geoData?.lng, elevation : elevation?.results[0].elevation, body: "Sun" }, {
-//   skip : !geoData?.lat || !geoData?.lng || isFetching
-//  })
+//  console.log(elevation)
+ const {data : events} = useGetEventsApiQuery({lat : geoData?.lat, lng : geoData?.lng, elevation : elevation?.results[0].elevation, body: "Sun" }, {
+  skip : !geoData?.lat || !geoData?.lng || isFetching
+ })
 
-//  console.log(events)
+ console.log(events)
     
     useEffect(() => {
       getLocation().then((val) => {
+        console.log(val)
         setGeoData({lat : val.latitude, lng : val.longitude})
       }).catch(error => console.log(error.code));
-    }, [])
+    }, [geoData])
    
-   if(!isFetching) console.log(elevation)
+
  
   return (
     <div className='min-h-screen text-white ' >

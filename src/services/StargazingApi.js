@@ -18,7 +18,7 @@ export const eventsApi = createApi({
     baseUrl: "https://api.astronomyapi.com/api/v2",
     prepareHeaders: (headers) => {
       const authString = btoa(
-        ``
+        `${process.env.REACT_APP_ASTRONOMY_API_ID}:${process.env.REACT_APP_ASTRONOMY_API_SECRET_KEY}`
       );
       console.log(authString);
       headers.Authorization = `Basic ${authString}`;

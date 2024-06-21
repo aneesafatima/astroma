@@ -43,35 +43,35 @@ function Planets() {
       setCurrentPlanet(prev => prev - 1)
    }
    
-   setTimeout(()=>{
-   document.getElementById("line").style.width = "100%";
-   document.getElementById("planet").style.opacity = "1";
-   }, 800)
-
-   
-
    const handlePlanetsInfo = () => {
     setShowPlanetInfo(true);
-      //  document.getElementById('planet-info-container').style.justifyContent = "space-between";
-      //  document.querySelector('.test').style.transform = "translate(10px)";
-      //  document.querySelector('.test').style.opacity = "1";
    }
 
    const removePlanetInfo = () => {
     setShowPlanetInfo(false)
    }
 
+   useEffect(() => {
+
+    setTimeout(()=>{
+      console.log("entered time out")
+      document.getElementById("line").style.width = "100%";
+      document.getElementById("planet").style.opacity = "1";
+   }, 600)
+
+   }, [currentPlanet])
+
   return (
     !isFetching && !isLoading &&
-      <div className="h-screen pt-10 px-24 overflow-hidden transition-all " style={{backgroundColor: planets[currentPlanet].bgColor}}>
+      <div className="h-screen pt-10 px-12 md:px-16 relative overflow-hidden transition-all " style={{backgroundColor: planets[currentPlanet].bgColor}}>
         <button className={`${showPlanetInfo ? "block" : "hidden"} absolute left-10 top-20 uppercase opacity-50 cursor-pointer hover:opacity-100 translate-y-0 transition-all hover:-translate-y-1 hover:text-shadow bg-transparent text-xs`} onClick={removePlanetInfo} style={{color : planets[currentPlanet].textColor}}>Back</button>
-        <MdOutlineKeyboardArrowRight color={`${planets[currentPlanet].textColor}`} size={30} className='absolute top-1/2 -translate-y-1/2 right-8 cursor-pointer hover:scale-95' onClick={planetAfter} />
-        <MdOutlineKeyboardArrowLeft color={`${planets[currentPlanet].textColor}`}   size={30} className='absolute top-1/2 -translate-y-1/2 left-8 cursor-pointer hover:scale-95'  onClick={planetBefore} />
+        <MdOutlineKeyboardArrowRight color={`${planets[currentPlanet].textColor}`} size={30} className='absolute top-1/2 -translate-y-1/2 right-3 sm:right-8 cursor-pointer hover:scale-95' onClick={planetAfter} />
+        <MdOutlineKeyboardArrowLeft color={`${planets[currentPlanet].textColor}`}   size={30} className='absolute top-1/2 -translate-y-1/2 left-3 sm:left-8 cursor-pointer hover:scale-95'  onClick={planetBefore} />
   
   
        <div><span className="w-[0%] block h-[0.4px] transition-all duration-[2000ms]" id='line' style={{backgroundColor: planets[currentPlanet].textColor}}></span></div> 
         < div className= {`flex ${!showPlanetInfo ? "justify-center" : "justify-normal"}  items-center h-[90vh]`} id="planet-info-container">     
-        <h1 className={`font-space-age text-9xl opacity-0 absolute left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  h-0  transition-all duration-1000 top-[7%] tracking-tighter`} style={{ color: showPlanetInfo ? planets[currentPlanet].textColor  : planets[currentPlanet].bgColor,textShadow}} id='planet'>{planets[currentPlanet].name}
+        <h1 className={`font-space-age text-5xl xs:text-7xl sm:text-8xl  md:text-9xl   opacity-0 absolute left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  h-0  transition-all duration-1000 top-[18%] xss:top-[15%] md:top-[11%] tracking-wide`} style={{ color: showPlanetInfo ? planets[currentPlanet].textColor  : planets[currentPlanet].bgColor,textShadow}} id='planet'>{planets[currentPlanet].name}
            </h1>
   
   
@@ -81,10 +81,11 @@ function Planets() {
         </div>
        
        <div className=''>
-         <img src={planets[currentPlanet].image} className={`w-[800px] h-[800px] absolute ${!showPlanetInfo ? "top-[40%]" : "top-[70%]" }  left-1/2 -translate-x-1/2  rounded-[50%] transition-all duration-1000
+         <img src={planets[currentPlanet].image} className={` w-[80vw] h-[80vw] absolute ${!showPlanetInfo ? "top-[40%]" : "top-[70%]" }  left-1/2 -translate-x-1/2  rounded-full transition-all duration-1000
        shadow-planet-shadow object-cover  animate-rotate`} alt="planet" id="planet-figure"/>
-      <div className={`w-[800px] h-[800px] absolute top-[40%] left-1/2 -translate-x-1/2 transition-all duration-1000 rounded-[50%]
+      <div className={` w-[80vw] h-[80vw] absolute object-cover left-1/2 -translate-x-1/2 transition-all duration-1000 rounded-full
          bg-gradient-to-l from-black via-transparent to-black ${!showPlanetInfo ? "top-[40%]" : "top-[70%]"} `} id="planet-figure-overlay"></div>
+
   </div>
          </div>
       )
