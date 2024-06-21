@@ -52,39 +52,38 @@ function Planets() {
    }
 
    useEffect(() => {
-
-    setTimeout(()=>{
-      console.log("entered time out")
-      document.getElementById("line").style.width = "100%";
-      document.getElementById("planet").style.opacity = "1";
-   }, 600)
-
-   }, [currentPlanet])
+      console.log("entered time out");
+      setTimeout(() => {
+        document.getElementById("line").style.width = "100%";
+        document.getElementById("planet").style.opacity = "1";
+      },200)
+   })
 
   return (
     !isFetching && !isLoading &&
-      <div className="h-screen pt-10 px-12 md:px-16 relative overflow-hidden transition-all " style={{backgroundColor: planets[currentPlanet].bgColor}}>
+      <div className={` pt-10 px-12 md:px-16 relative overflow-hidden transition-all ${showPlanetInfo ? "pb-10 min-h-screen flex flex-col items-center lg:space-y-0 lg:block lg:h-screen" : "h-screen"}`} style={{backgroundColor: planets[currentPlanet].bgColor}}>
         <button className={`${showPlanetInfo ? "block" : "hidden"} absolute left-10 top-20 uppercase opacity-50 cursor-pointer hover:opacity-100 translate-y-0 transition-all hover:-translate-y-1 hover:text-shadow bg-transparent text-xs`} onClick={removePlanetInfo} style={{color : planets[currentPlanet].textColor}}>Back</button>
         <MdOutlineKeyboardArrowRight color={`${planets[currentPlanet].textColor}`} size={30} className='absolute top-1/2 -translate-y-1/2 right-3 sm:right-8 cursor-pointer hover:scale-95' onClick={planetAfter} />
         <MdOutlineKeyboardArrowLeft color={`${planets[currentPlanet].textColor}`}   size={30} className='absolute top-1/2 -translate-y-1/2 left-3 sm:left-8 cursor-pointer hover:scale-95'  onClick={planetBefore} />
   
   
-       <div><span className="w-[0%] block h-[0.4px] transition-all duration-[2000ms]" id='line' style={{backgroundColor: planets[currentPlanet].textColor}}></span></div> 
-        < div className= {`flex ${!showPlanetInfo ? "justify-center" : "justify-normal"}  items-center h-[90vh]`} id="planet-info-container">     
-        <h1 className={`font-space-age text-5xl xs:text-7xl sm:text-8xl  md:text-9xl   opacity-0 absolute left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  h-0  transition-all duration-1000 top-[18%] xss:top-[15%] md:top-[11%] tracking-wide`} style={{ color: showPlanetInfo ? planets[currentPlanet].textColor  : planets[currentPlanet].bgColor,textShadow}} id='planet'>{planets[currentPlanet].name}
+       <span className={`${!showPlanetInfo ? "w-[0%]" : ""} block h-[0.4px] transition-all duration-[2000ms] ${showPlanetInfo ? "hidden lg:block" : ""}`} id='line' style={{backgroundColor: planets[currentPlanet].textColor}}></span>
+        < div className= {`flex ${!showPlanetInfo ? "justify-center items-center" : "justify-normal"}   order-2`} id="planet-info-container">     
+        <h1 className={`font-space-age text-5xl xs:text-7xl sm:text-8xl  md:text-9xl opacity-0  left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  h-0  transition-all duration-1000 tracking-wide ${showPlanetInfo ? "relative my-7 lg:absolute lg:top-[11%] " : ' absolute top-[18%] xss:top-[15%] md:top-[11%]'}`} style={{ color: showPlanetInfo ? planets[currentPlanet].textColor  : planets[currentPlanet].bgColor,textShadow}} id='planet'>{planets[currentPlanet].name}
            </h1>
   
-  
-          <button className={`px-3 py-1 rounded-[10px]  border-[1px]    hover:scale-95  active:scale-95 relative z-10 text-xs font-bold font-roboto overflow-hidden ${showPlanetInfo ? "hidden" : null}`} id="explore-button" style={{color: planets[currentPlanet].textColor, border: `1px solid ${planets[currentPlanet].textColor}`}} onMouseEnter={() => handleMouseEnter(planets, currentPlanet)} onMouseLeave={() => handleMouseleave(planets, currentPlanet, showPlanetInfo)} onClick={handlePlanetsInfo}>Explore Surface</button>
+          <button className={`px-3 py-1 rounded-[10px] border-[1px] scale-100 hover:scale-95  active:scale-95 transition-all duration-300  z-10 text-xs font-bold font-roboto overflow-hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ${showPlanetInfo ? "hidden" : null}`} id="explore-button" style={{color: planets[currentPlanet].textColor, border: `1px solid ${planets[currentPlanet].textColor}`}} onMouseEnter={() => handleMouseEnter(planets, currentPlanet)} onMouseLeave={() => handleMouseleave(planets, currentPlanet, showPlanetInfo)} onClick={handlePlanetsInfo}>Explore Surface</button>
+        </div>
+           <div className='order-3'>
 
           <PlanetsData showPlanetInfo = {showPlanetInfo} planets = {planets} currentPlanet = {currentPlanet} planetDef = {planetDef} data={data}/>
-        </div>
+           </div>
        
-       <div className=''>
-         <img src={planets[currentPlanet].image} className={` w-[80vw] h-[80vw] absolute ${!showPlanetInfo ? "top-[40%]" : "top-[70%]" }  left-1/2 -translate-x-1/2  rounded-full transition-all duration-1000
+       <div className='order-1'>
+         <img src={planets[currentPlanet].image} className={`  ${!showPlanetInfo ? "w-[80vw] h-[80vw] top-[40%] absolute" : "w-[50vw] h-[50vw] relative md:w-[45vw] md:h-[45vw] lg:absolute lg:top-[70%] "}  left-1/2 -translate-x-1/2  rounded-full transition-all duration-1000
        shadow-planet-shadow object-cover  animate-rotate`} alt="planet" id="planet-figure"/>
-      <div className={` w-[80vw] h-[80vw] absolute object-cover left-1/2 -translate-x-1/2 transition-all duration-1000 rounded-full
-         bg-gradient-to-l from-black via-transparent to-black ${!showPlanetInfo ? "top-[40%]" : "top-[70%]"} `} id="planet-figure-overlay"></div>
+      <div className={`object-cover left-1/2 -translate-x-1/2 transition-all duration-1000 rounded-full 
+         bg-gradient-to-l from-black via-transparent to-black absolute ${!showPlanetInfo ? "w-[80vw] h-[80vw] top-[40%] " : "absolute top-10 w-[50vw] h-[50vw] md:w-[45vw] md:h-[45vw]  lg:top-[70%]"}  `} id="planet-figure-overlay"></div>
 
   </div>
          </div>

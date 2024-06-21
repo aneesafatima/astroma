@@ -7,7 +7,7 @@ export default {
         lato: ["lato", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
         PtSans: ["PT Sans", "sans-serif"],
-        "space-age": ["Space Age", "sans-serif"],
+        "space-age": [ "sans-serif"],
       },
       screens: {
         xxs: "400px",
