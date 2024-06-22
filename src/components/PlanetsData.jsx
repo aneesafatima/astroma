@@ -22,7 +22,7 @@ function PlanetsData({showPlanetInfo, planets, currentPlanet, data, planetDef}) 
   <li className='font-lato font-medium'>Length of Year <li >{millify(Math.round(data.sideralOrbit))} days</li></li>
   <li className='font-lato font-medium'>Temperature <li >{data.avgTemp} K</li></li>
   <li className='font-lato font-medium'>Density <li >{data.density} g/cm³</li></li>
-      </ul></div>
+      </ul>   </div>
   </div>
   )
 }

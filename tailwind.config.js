@@ -34,7 +34,8 @@ export default {
         "planet-shadow": "0px 4px 8px rgba(0,0,0,0.6)",
         "btn-shadow": "0 2px 10px 0 rgba(255, 255, 255, 0.5)",
         "btn-shadow-hover": "0 2px 10px 0 rgba(255, 255, 255, 0.8)",
-         "earth-shadow" : "20px 20px 50px rgba(0, 0, 0, 0.9)"
+         "earth-shadow" : "20px 20px 50px rgba(0, 0, 0, 0.9)",
+         "sun-shadow" : "inset 0 0 10px rgba(0, 0, 0, 0.5)"
       },
   
 

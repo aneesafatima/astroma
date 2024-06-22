@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { getLocation } from '../helpers';
 import { useGetElevationQuery, useGetEventsApiQuery } from '../services/StargazingApi';
+import {Events} from '.';
 
 function StargazingGuide() {
   console.log("Hello from stargazing guide !")
   const [geoData, setGeoData] = useState(); 
-  console.log(geoData)
- const {data : elevation, isFetching} = useGetElevationQuery({lat : geoData?.lat, lng : geoData?.lng}, {
-  skip : !geoData?.lat || !geoData?.lng
- })
- console.log(`Elevation : ${elevation?.results[0].elevation}`)
- const {data : events} = useGetEventsApiQuery({lat : geoData?.lat, lng : geoData?.lng, elevation : elevation?.results[0].elevation, body: "Sun" }, {
-  skip : !geoData?.lat || !geoData?.lng || isFetching
- })
+//   console.log(geoData)
+//  const {data : elevation, isFetching} = useGetElevationQuery({lat : geoData?.lat, lng : geoData?.lng}, {
+//   skip : !geoData?.lat || !geoData?.lng
+//  })
+//  console.log(`Elevation : ${elevation?.results[0].elevation}`)
+//  const {data : events} = useGetEventsApiQuery({lat : geoData?.lat, lng : geoData?.lng, elevation : elevation?.results[0].elevation, body: "Sun" }, {
+//   skip : !geoData?.lat || !geoData?.lng || isFetching
+//  })
 
- console.log(events)
+//  console.log(events)
 
    // {lat: 22.57609973033708, lng: 88.35774399379065}
 
@@ -43,11 +44,7 @@ function StargazingGuide() {
       <p className='w-1/2 font-semibold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi suscipit aspernatur veritatis excepturi quisquam. Inventore saepe mollitia possimus ducimus minus aperiam dicta! Sequi suscipit maxime repellendus placeat amet obcaecati impedit?</p>
       <button className='bg-white text-black px-3 py-2  shadow-btn-shadow rounded-2xl scale-100 text-sm hover:scale-90 hover:shadow-btn-shadow-hover transition-all'>Get Started</button>
      </div>
-   { !isFetching && <div className='bg-black h-screen py-20 px-20'>
-    <div className='bg-[#181717b3] h-full  rounded-2xl'>
-
-    </div>
-     </div>}
+    <Events/>
 
     </div>
   )
