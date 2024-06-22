@@ -7,7 +7,10 @@ export const locationApi = createApi({
   }),
   endpoints: (builder) => ({
     getElevation: builder.query({
-      query: ({ lat, lng }) => `/lookup?locations=${lat},${lng}`,
+      query: ({ lat, lng }) => {
+        console.log("entered elevation api");
+        return `/lookup?locations=${lat},${lng}`;
+      },
     }),
   }),
 });
@@ -18,7 +21,7 @@ export const eventsApi = createApi({
     baseUrl: "https://api.astronomyapi.com/api/v2",
     prepareHeaders: (headers) => {
       const authString = btoa(
-        `${process.env.REACT_APP_ASTRONOMY_API_ID}:${process.env.REACT_APP_ASTRONOMY_API_SECRET_KEY}`
+        `${import.meta.env.VITE_REACT_APP_ASTRONOMY_API_ID}:${import.meta.env.VITE_REACT_APP_ASTRONOMY_API_SECRET_KEY}`
       );
       console.log(authString);
       headers.Authorization = `Basic ${authString}`;
@@ -31,13 +34,11 @@ export const eventsApi = createApi({
         const toDate = new Date(Date.now() + 1000 * 60 * 60 * 24 * 30)
           .toISOString()
           .substring(0, 10);
-        console.log(toDate);
         const fromDate = new Date().toISOString().substring(0, 10);
-        console.log(fromDate);
         const currentTime = new Date().toLocaleTimeString("en-US", {
           hour12: false,
         });
-        console.log(currentTime);
+        // {lat: 22.57609973033708, lng: 88.35774399379065}
         console.log(
           `/bodies/events/${body}?latitude=${lat}&longitude=${lng}&elevation=${elevation}&from_date=${fromDate}&to_date=${toDate}&time=${currentTime}`
         );

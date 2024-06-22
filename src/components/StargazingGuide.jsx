@@ -9,22 +9,25 @@ function StargazingGuide() {
  const {data : elevation, isFetching} = useGetElevationQuery({lat : geoData?.lat, lng : geoData?.lng}, {
   skip : !geoData?.lat || !geoData?.lng
  })
-//  console.log(elevation)
+ console.log(`Elevation : ${elevation?.results[0].elevation}`)
  const {data : events} = useGetEventsApiQuery({lat : geoData?.lat, lng : geoData?.lng, elevation : elevation?.results[0].elevation, body: "Sun" }, {
   skip : !geoData?.lat || !geoData?.lng || isFetching
  })
 
  console.log(events)
-    
+
+   // {lat: 22.57609973033708, lng: 88.35774399379065}
+
     useEffect(() => {
-      getLocation().then((val) => {
-        console.log(val)
-        setGeoData({lat : val.latitude, lng : val.longitude})
-      }).catch(error => console.log(error.code));
-    }, [geoData])
+      console.log("entered useEffect")
+      setGeoData({lat : '22.57609973033708' , lng : '88.35774399379065' })
+      // getLocation().then((val) => {
+      //   console.log("got values")
+      //   setGeoData({lat : val.latitude, lng : val.longitude})
+      // }).catch(error => console.log(error.code));
+    }, [])
    
 
- 
   return (
     <div className='min-h-screen text-white ' >
       <nav className='fixed top-7 bg-[#2a2929b3] z-10 left-1/2 -translate-x-1/2 p-2 rounded-full cursor-pointer'>
