@@ -24,7 +24,7 @@ export const eventsApi = createApi({
         `${import.meta.env.VITE_REACT_APP_ASTRONOMY_API_ID}:${import.meta.env.VITE_REACT_APP_ASTRONOMY_API_SECRET_KEY}`
       );
       console.log(authString);
-      headers.Authorization = `Basic ${authString}`;
+      headers.set('Authorization',` Basic ${authString}`);
       return headers;
     },
   }),
