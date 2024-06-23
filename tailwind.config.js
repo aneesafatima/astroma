@@ -7,7 +7,7 @@ export default {
         lato: ["lato", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
         PtSans: ["PT Sans", "sans-serif"],
-        "space-age": [ "sans-serif"],
+        "space-age": ["sans-serif"],
       },
       screens: {
         xxs: "400px",
@@ -24,8 +24,8 @@ export default {
           "linear-gradient(360deg, rgba(27,27,28,0.730550284629981) 0%, rgba(223,216,216,1) 100%)",
         "plants-container-bg":
           "radial-gradient(circle at center, #000 30%, #111 70%, #000 100%)",
-          "stargazing-bg" :"url('/assets/stargazing-guide-bg.jpg')",
-          earth: "url(/assets/earth-night-bg.jpg)"
+        "stargazing-bg": "url('/assets/stargazing-guide-bg.jpg')",
+        earth: "url(/assets/earth-night-bg.jpg)",
       },
       colors: {
         cardsCustomGray: "rgba(31, 29, 29, 0.406)",
@@ -34,21 +34,20 @@ export default {
         "planet-shadow": "0px 4px 8px rgba(0,0,0,0.6)",
         "btn-shadow": "0 2px 10px 0 rgba(255, 255, 255, 0.5)",
         "btn-shadow-hover": "0 2px 10px 0 rgba(255, 255, 255, 0.8)",
-         "earth-shadow" : "20px 20px 50px rgba(0, 0, 0, 0.9)",
-         "sun-shadow" : "inset 0 0 10px rgba(0, 0, 0, 0.5)"
+        "earth-shadow": "20px 20px 50px rgba(0, 0, 0, 0.9)",
+        "sun-shadow": "inset 0 0 10px rgba(0, 0, 0, 0.5)",
       },
-  
 
       keyframes: {
-          
         rotate: {
           to: {
             objectPosition: "100%",
           },
-      }},
-    animation: {
-      rotate: "rotate 25s linear alternate infinite"
-  },
+        },
+      },
+      animation: {
+        rotate: "rotate 25s linear alternate infinite",
+      },
       transitionProperty: {
         top: "top",
       },
@@ -56,9 +55,7 @@ export default {
         "white-outline":
           "0 0 0 white, 0 0 0.5rem white, 0 0 1rem white, 0 0 2rem white",
       },
-     
     },
   },
-  plugins: [
-  ],
+  plugins: [],
 };
