@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getLocation } from '../helpers';
 import { useGetElevationQuery, useGetEventsApiQuery } from '../services/StargazingApi';
-import {Events} from '.';
+import {Events, Weather} from '.';
 
 function StargazingGuide() {
   console.log("Hello from stargazing guide !")
@@ -24,6 +24,7 @@ function StargazingGuide() {
       <button className='bg-white text-black px-3 py-2  shadow-btn-shadow rounded-2xl scale-100 text-sm hover:scale-90 hover:shadow-btn-shadow-hover transition-all'>Get Started</button>
      </div>
     <Events/>
+    <Weather/>
 
     </div>
   )

@@ -9,3 +9,4 @@ export { default as Features } from "./Features";
 export { default as EarthInfo } from "./EarthInfo";
 export { default as Events } from "./Events";
 export { default as EventsItem } from "./EventsItem";
+export { default as Weather } from "./Weather";

@@ -36,7 +36,7 @@ function Events() {
             <img
               src={starBody === "sun" ? sunBg : moonBg}
               alt="sun"
-              className="w-64 object-left h-64 rounded-full shadow-sun-shadow block animate-rotate"
+              className="w-64 object-cover h-64 rounded-full shadow-sun-shadow block animate-rotate"
               id="body"
             />
 
