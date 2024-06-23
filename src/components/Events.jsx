@@ -4,7 +4,7 @@ import moonBg from "/assets/moon-bg.jpg";
 import { EventsItem } from ".";
 import { useGetPlanetInfoQuery } from "../services/planetsApi";
 
-function Events() {
+function Events({geoData, setGeoData}) {
   const [starBody, setStarBody] = useState("sun");
   const { data, isFetching } = useGetPlanetInfoQuery(starBody);
 
@@ -78,7 +78,7 @@ function Events() {
               {" "}
               Upcoming events
             </h2>
-            <EventsItem starBody={starBody} />
+            <EventsItem starBody={starBody} geoData={geoData} setGeoData={setGeoData}/>
           </div>
         </div>
       </div>

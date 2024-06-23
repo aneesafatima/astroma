@@ -6,11 +6,8 @@ import {
   useGetElevationQuery,
   useGetEventsApiQuery,
 } from "../services/StargazingApi";
-import { DiCelluloid } from "react-icons/di";
 
-function EventsItem({ starBody }) {
-  const [geoData, setGeoData] = useState();
-  console.log(geoData);
+function EventsItem({ starBody, geoData, setGeoData }) {
   const { data: elevation, isFetching: isElevationLoading } =
     useGetElevationQuery(
       { lat: geoData?.lat, lng: geoData?.lng },
@@ -89,8 +86,8 @@ function EventsItem({ starBody }) {
 
             <div className="flex justify-between">
               <div className="">
-                Date : 
-                <span className="font-light"> 
+                Date :
+                <span className="font-light">
                   {date?.toLocaleDateString("en-US", {
                     month: "long",
                     year: "numeric",

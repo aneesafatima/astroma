@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit/react";
 import { articlesApi } from "./services/astronomicalObjects";
 import { planetsApi, wikiApi } from "./services/planetsApi";
 import { eventsApi, locationApi } from "./services/StargazingApi";
+import { weatherApi } from "./services/Weather";
 
 export const store = configureStore({
   reducer: {
@@ -10,7 +11,8 @@ export const store = configureStore({
     [planetsApi.reducerPath]: planetsApi.reducer,
     [wikiApi.reducerPath]: wikiApi.reducer,
     [locationApi.reducerPath]: locationApi.reducer,
-    [eventsApi.reducerPath] : eventsApi.reducer
+    [eventsApi.reducerPath] : eventsApi.reducer,
+    [weatherApi.reducerPath] : weatherApi.reducer
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
@@ -20,5 +22,5 @@ export const store = configureStore({
       .concat(planetsApi.middleware)
       .concat(wikiApi.middleware)
       .concat(locationApi.middleware)
-      .concat(eventsApi.middleware),
+      .concat(eventsApi.middleware).concat(weatherApi.middleware),
 });

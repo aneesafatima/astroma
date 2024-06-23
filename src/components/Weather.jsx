@@ -1,10 +1,17 @@
 import React from "react";
 import { FaLongArrowAltDown, FaLongArrowAltUp } from "react-icons/fa";
+import { useGetWeatherQuery } from "../services/Weather";
 
-function Weather() {
+function Weather({geoData}) {
+  const {data, isFetching} = useGetWeatherQuery({lat : geoData?.lat, lng : geoData?.lng },{
+    skip : !geoData?.lng || geoData?.lng
+  })
+ console.log(data)
+
   return (
+     
     <div className="bg-green-400 h-screen flex flex-col justify-center font-lato">
-      <section className="flex items-center justify-betwwen px-8 bg-red-200">
+        {!isFetching && (<><section className="flex items-center justify-betwwen px-8 bg-red-200">
         <div className="flex items-center bg-pink-400">
           <img
             src="http://openweathermap.org/img/wn/10d@2x.png"
@@ -98,7 +105,8 @@ function Weather() {
 
 
     
-</section>
+</section></>)}
+      
      
    
     </div>
