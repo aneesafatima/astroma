@@ -8,3 +8,4 @@ export { default as PlanetsData } from "./PlanetsData";
 export { default as Features } from "./Features";
 export { default as EarthInfo } from "./EarthInfo";
 export { default as Events } from "./Events";
+export { default as EventsItem } from "./EventsItem";
