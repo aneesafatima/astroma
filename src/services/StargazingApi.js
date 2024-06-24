@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+
+
 export const locationApi = createApi({
   reducerPath: "locationApi",
   baseQuery: fetchBaseQuery({
@@ -8,7 +10,7 @@ export const locationApi = createApi({
   endpoints: (builder) => ({
     getElevation: builder.query({
       query: ({ lat, lng }) => {
-        console.log("entered elevation api");
+        
         return `/lookup?locations=${lat},${lng}`;
       },
     }),
@@ -23,7 +25,7 @@ export const eventsApi = createApi({
       const authString = btoa(
         `${import.meta.env.VITE_REACT_APP_ASTRONOMY_API_ID}:${import.meta.env.VITE_REACT_APP_ASTRONOMY_API_SECRET_KEY}`
       );
-      console.log(authString);
+  
       headers.set('Authorization',` Basic ${authString}`);
       return headers;
     },
@@ -39,14 +41,22 @@ export const eventsApi = createApi({
           hour12: false,
         });
         // {lat: 22.57609973033708, lng: 88.35774399379065}
-        console.log(
-          `/bodies/events/${body}?latitude=${lat}&longitude=${lng}&elevation=${elevation}&from_date=${fromDate}&to_date=${toDate}&time=${currentTime}`
-        );
+
         return `/bodies/events/${body}?latitude=${lat}&longitude=${lng}&elevation=${elevation}&from_date=${fromDate}&to_date=${toDate}&time=${currentTime}`;
       },
     }),
+
+    getMoonPhase : builder.mutation({
+      query: (requestedData) => ({
+        url : '/studio/moon-phase',
+        method : "POST",
+        body : requestedData
+      })
+    })
   }),
 });
 
+
 export const { useGetElevationQuery } = locationApi;
-export const { useGetEventsApiQuery } = eventsApi;
+export const { useGetEventsApiQuery, useGetMoonPhaseMutation } = eventsApi;
+

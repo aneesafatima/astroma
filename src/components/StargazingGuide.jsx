@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Events, Weather } from ".";
+import { Events, MoonPhase, Weather } from ".";
 
 function StargazingGuide() {
-  console.log("Hello from stargazing guide !");
   const [geoData, setGeoData] = useState();
 
   return (
@@ -42,6 +41,7 @@ function StargazingGuide() {
       </div>
       <Events geoData={geoData} setGeoData={setGeoData} />
       <Weather geoData={geoData} />
+      <MoonPhase/>
     </div>
   );
 }

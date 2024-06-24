@@ -20,9 +20,6 @@ function ArticleItems({ data, coverArticleIndex, setCoverArticleIndex, setCoverA
   //   [...document.getElementsByClassName("scroll-item")].forEach(el => el.style.transform = `translateY(0)`);
   // }, [coverArticleIndex, data]);
 
-  useEffect(() => {
-    console.log(offset);
-  }, [offset]);
 
   const scrollItemsUp = () => {
     setOffset(prev => {

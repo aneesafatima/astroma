@@ -52,7 +52,7 @@ function Planets() {
    }
 
    useEffect(() => {
-      console.log("entered time out");
+     
       setTimeout(() => {
         document.getElementById("line").style.width = "100%";
         document.getElementById("planet").style.opacity = "1";

@@ -17,11 +17,9 @@ function Weather({ geoData }) {
   const { data: uvIndex, isFetching: isLoading } = useGetUvIndexQuery(
     { lat: geoData?.lat, lng: geoData?.lng },
     {
-      skip: !isFetching,
+      skip: isFetching,
     }
   );
-  console.log(data);
-  console.log(uvIndex);
 
   return (
     <div className=" h-screen flex flex-col justify-center items-center font-lato bg-black">
@@ -77,7 +75,7 @@ function Weather({ geoData }) {
                 <IoMdSunny style={{ color: "yellow" }} size={20} />
                 <div className="mx-3">
                   <span className="block text-[#7e7c7c] text-xs">UV Index</span>
-                  1.2
+                  {uvIndex?.value}
                 </div>
               </div>
               <div className="pressure flex items-center">

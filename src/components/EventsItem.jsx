@@ -15,7 +15,6 @@ function EventsItem({ starBody, geoData, setGeoData }) {
         skip: !geoData?.lat || !geoData?.lng,
       }
     );
-  console.log(`Elevation : ${elevation?.results[0].elevation}`);
   const { data: events, isFetching: isEventsLoading } = useGetEventsApiQuery(
     {
       lat: geoData?.lat,
@@ -27,15 +26,15 @@ function EventsItem({ starBody, geoData, setGeoData }) {
       skip: !geoData?.lat || !geoData?.lng || isElevationLoading,
     }
   );
-  console.log(events);
+ 
   const event = events?.data.table.rows[0].cells[0];
   const date = new Date(event?.eventHighlights.peak.date);
 
   // {lat: 22.57609973033708, lng: 88.35774399379065}
   useEffect(() => {
-    console.log("entered useEffect");
+   
     setGeoData({ lat: "22.57609973033708", lng: "88.35774399379065" });
-    console.log("got values");
+    
     getLocation()
       .then((val) => {
         setGeoData({ lat: val.latitude, lng: val.longitude });
