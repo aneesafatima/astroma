@@ -10,7 +10,7 @@ function Events({ geoData, setGeoData }) {
 
   return (
     !isFetching && (
-      <div className="bg-black h-fit px-7 xxs:px-10 py-16 sm:px-20">
+      <div className="bg-black h-fit px-7 xxs:px-10 py-16 sm:px-20 scroll-smooth" id="events">
         <div className="bg-[#181717b3] h-full rounded-2xl flex flex-wrap justify-around  transition-all duration-1000  p-10">
           <div id="body-container" className="space-y-5">
             <div className="mb-6">
@@ -27,7 +27,7 @@ function Events({ geoData, setGeoData }) {
                 </li>
                 <li
                   className="w-full py-2 text-center z-20"
-                  onClick={() => setStarBody("Moon")}
+                  onClick={() => setStarBody("moon")}
                 >
                   Moon
                 </li>

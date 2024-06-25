@@ -29,7 +29,7 @@ function EventsItem({ starBody, geoData, setGeoData }) {
 
   console.log(events)
  
-  const date = new Date(event?.eventHighlights.peak.date);
+  // const date = new Date(event?.eventHighlights.peak.date);
 
   // {lat: 22.57609973033708, lng: 88.35774399379065}
   useEffect(() => {

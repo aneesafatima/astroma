@@ -3,16 +3,16 @@ import { Events, Weather } from ".";
 
 function StargazingGuide() {
   const [geoData, setGeoData] = useState();
-
+//fix the elevation undefined error
   return (
-    <div className="min-h-screen text-white ">
+    <div className="min-h-screen text-white">
       <nav className="fixed top-7 bg-[#2a2929b3] z-10 left-1/2 -translate-x-1/2 p-2 rounded-full cursor-pointer ">
         <ul className="flex space-x-1 text-xs md:text-sm text-center text-lato font-semibold">
           <li className="hover:bg-[#181717b3] rounded-full py-2 px-3">
-            Astronomy Event
+            <a href="#events">Astronomy Event</a>
           </li>
           <li className="hover:bg-[#181717b3] rounded-full py-2 px-3">
-            Local Weather
+           <a href="#weather">Local Weather</a> 
           </li>
           <li className="hover:bg-[#181717b3] rounded-full py-2 px-3">
             Moon phases

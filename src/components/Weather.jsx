@@ -24,10 +24,10 @@ function Weather({ geoData }) {
   );
 
   return (
-    <div className=" h-fit flex flex-col justify-center items-center py-20 font-lato bg-black sm:space-y-6">
+    <div className=" h-fit flex flex-col justify-center items-center py-20 font-lato bg-black sm:space-y-6" id="weather">
       {!isFetching && !isLoading && (
         <>
-          <h2 className="uppercase text-3xl text-[#a3a3a3] mb-6 font-roboto font-bold">
+          <h2 className="uppercase text-2xl sm:text-3xl text-[#fff] mb-6 font-lato font-bold">
             Local Weather
           </h2>
 
@@ -35,7 +35,7 @@ function Weather({ geoData }) {
             <div className="flex items-center">
               <img
                 src={`http://openweathermap.org/img/wn/${data?.weather[0].icon}@2x.png`}
-                className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] "
+                className=""
                 alt="weather icon"
               />
               <h2 className="text-7xl md:text-8xl font-extrabold font-lato">{`${Math.round(data?.main.temp - 273.15)}\u00B0 C`}</h2>
@@ -64,7 +64,7 @@ function Weather({ geoData }) {
           </section>
 
           <section className="flex weather-info py-8 px-5 flex-wrap sm:flex-nowrap sm:px-20  pointer-events-none space-y-5 sm:space-y-0">
-            <div className="left-section grid grid-cols-2 gap-5 px-5 sm:py-8  w-full  ">
+            <div className="left-section grid grid-cols-2 gap-6 px-5  w-full  ">
               <div className="rain flex items-center text-sm sm:text-[16px]">
                 <MdOutlineDescription size={20} style={{ color: "gray" }} />
                 <div className="mx-3">
@@ -103,7 +103,7 @@ function Weather({ geoData }) {
               </div>
             </div>
 
-            <div className="right-section grid grid-cols-2 px-5 gap-5 w-full">
+            <div className="right-section grid grid-cols-2 px-5 gap-6  w-full">
               <div className="rain flex items-center text-sm sm:text-[16px]">
                 <WiSunrise size={20} style={{ color: "yellow" }} />
                 <div className="mx-3">
