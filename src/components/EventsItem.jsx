@@ -26,8 +26,9 @@ function EventsItem({ starBody, geoData, setGeoData }) {
       skip: !geoData?.lat || !geoData?.lng || isElevationLoading,
     }
   );
+
+  console.log(events)
  
-  const event = events?.data.table.rows[0].cells[0];
   const date = new Date(event?.eventHighlights.peak.date);
 
   // {lat: 22.57609973033708, lng: 88.35774399379065}
@@ -71,7 +72,7 @@ function EventsItem({ starBody, geoData, setGeoData }) {
                 Time :
                 <span className="font-light">
                   {" "}
-                  {`${date?.getHours()} : ${date?.getMinutes()} : ${date?.getSeconds()}`}
+                  {`${new Date(event.eventHighlights.peak.date)?.getHours()} : ${new Date(event.eventHighlights.peak.date)?.getMinutes()} : ${new Date(event.eventHighlights.peak.date)?.getSeconds()}`}
                 </span>
               </div>
               <div>
@@ -87,7 +88,7 @@ function EventsItem({ starBody, geoData, setGeoData }) {
               <div className="">
                 Date :
                 <span className="font-light">
-                  {date?.toLocaleDateString("en-US", {
+                  {new Date(event.eventHighlights.peak.date)?.toLocaleDateString("en-US", {
                     month: "long",
                     year: "numeric",
                     day: "numeric",

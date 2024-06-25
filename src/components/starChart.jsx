@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { useGetMoonPhaseMutation } from '../services/StargazingApi';
+import { useGetStarChartMutation } from '../services/StargazingApi';
 
-function MoonPhase() {
+function starChart() {
   const requestedData =  {
     "style": {
         "moonStyle": "default",
@@ -35,4 +35,4 @@ function MoonPhase() {
   )
 }
 
-export default MoonPhase
+export default starChart

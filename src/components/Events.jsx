@@ -4,19 +4,19 @@ import moonBg from "/assets/moon-bg.jpg";
 import { EventsItem } from ".";
 import { useGetPlanetInfoQuery } from "../services/planetsApi";
 
-function Events({geoData, setGeoData}) {
+function Events({ geoData, setGeoData }) {
   const [starBody, setStarBody] = useState("sun");
   const { data, isFetching } = useGetPlanetInfoQuery(starBody);
 
   return (
     !isFetching && (
-      <div className="bg-black min-h-screen py-16 px-20">
+      <div className="bg-black h-fit px-7 xxs:px-10 py-16 sm:px-20">
         <div className="bg-[#181717b3] h-full rounded-2xl flex flex-wrap justify-around  transition-all duration-1000  p-10">
           <div id="body-container" className="space-y-5">
             <div className="mb-6">
               <ul className="flex border border-1 border-black justify-center   cursor-pointer font-semibold font-lato bg-[#1f1f1fb3] relative">
                 <li
-                  className={`bg-[#181717b3] w-[127px] h-full absolute ${starBody === "moon" ? "right-0" : "left-0"} z-10`}
+                  className={`bg-[#181717b3] w-1/2 h-full absolute ${starBody === "moon" ? "right-0" : "left-0"} z-10`}
                   id="overlay"
                 ></li>
                 <li
@@ -36,7 +36,7 @@ function Events({geoData, setGeoData}) {
             <img
               src={starBody === "sun" ? sunBg : moonBg}
               alt="sun"
-              className="w-64 object-cover h-64 rounded-full shadow-sun-shadow block animate-rotate"
+              className="w-52 h-52 sm:w-64  sm:h-64 object-cover  rounded-full shadow-sun-shadow block animate-rotate"
               id="body"
             />
 
@@ -73,12 +73,16 @@ function Events({geoData, setGeoData}) {
             </ul>
           </div>
 
-          <div className="w-1/3 space-y-2 py-4" id="events">
+          <div className="w-full md:w-fit space-y-2 py-4" id="events">
             <h2 className="text-center uppercase tracking-wide ">
               {" "}
               Upcoming events
             </h2>
-            <EventsItem starBody={starBody} geoData={geoData} setGeoData={setGeoData}/>
+            <EventsItem
+              starBody={starBody}
+              geoData={geoData}
+              setGeoData={setGeoData}
+            />
           </div>
         </div>
       </div>

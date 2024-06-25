@@ -46,9 +46,9 @@ export const eventsApi = createApi({
       },
     }),
 
-    getMoonPhase : builder.mutation({
+    getStarChartPhase : builder.mutation({
       query: (requestedData) => ({
-        url : '/studio/moon-phase',
+        url : '/studio/star-chart',
         method : "POST",
         body : requestedData
       })
@@ -58,5 +58,5 @@ export const eventsApi = createApi({
 
 
 export const { useGetElevationQuery } = locationApi;
-export const { useGetEventsApiQuery, useGetMoonPhaseMutation } = eventsApi;
+export const { useGetEventsApiQuery, useGetStarChartMutation } = eventsApi;
 
