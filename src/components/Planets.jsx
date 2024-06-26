@@ -125,7 +125,7 @@ function Planets() {
           id="planet-info-container"
         >
           <h1
-            className={`font-space-age text-8xl xs:text-7xl md:text-9xl opacity-0  left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  transition-all duration-1000 sm:tracking-wide ${showPlanetInfo ? "text-6xl relative my-7 lg:absolute lg:top-[11%] " : " absolute top-[15%] xss:top-[15%] md:top-[11%]"}`}
+            className={`font-sans-serif text-8xl xs:text-7xl md:text-9xl opacity-0  left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  transition-all duration-1000 sm:tracking-wide ${showPlanetInfo ? "text-6xl relative my-7 lg:absolute lg:top-[11%] " : " absolute top-[15%] xss:top-[15%] md:top-[11%]"}`}
             style={{
               color: showPlanetInfo
                 ? planets[currentPlanet].textColor

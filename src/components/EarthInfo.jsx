@@ -1,30 +1,44 @@
-import React from 'react'
-import { useGetPlanetInfoQuery, useGetPlanetDefQuery } from '../services/planetsApi'
-import millify from 'millify';
+import React from "react";
 
 function EarthInfo() {
-    const {data, isFetching} = useGetPlanetInfoQuery("earth");
+  // const { data, isFetching } = useGetPlanetInfoQuery("earth");
 
   return (
-    !isFetching && 
-    <div className='min-h-screen bg-[#070a0d] flex flex-wrap items-center px-10 py-7 text-[#717070] justify-around space-y-9'>
-      <img  src="/assets/earth-night-bg.jpg" className=' w-72 h-72 xxs:w-96 xxs:h-96 object-cover rounded-full shadow-earth-shadow animate-rotate border-black' ></img>
+    <div className="md:h-screen min-h-screen bg-black flex flex-wrap md:flex-nowrap items-center justify-center py-16 xxs:px-10 sm:px-0 md:pr-10 text-[#717070] ">
+      <div className="w-full pointer-events-none">
 
-      <div>
-      <ul className='leading-10 pointer-events-none tracking-widest' id="earth-info">
-      <li className='font-lato font-bold'>Radius :  <span className=''>{data.meanRadius} km</span></li>
-      <li className='font-lato font-bold'>Distance from sun : <span>{millify(data.perihelion, {space: true})} km</span></li>
-      
-      <li className='font-lato font-bold'>Moons : <span>{data?.moons?.length ?? "none"}</span></li>
-      <li className='font-lato font-bold'>Gravity : <span>{data.gravity} m/s²</span></li>
-      <li className='font-lato font-bold'>Axial Tilt : <span>{`${Math.round(data.axialTilt * 10)/10}\u00B0`}</span></li>
-        <li className='font-lato font-bold'>Length of Year : <span>{millify(Math.round(data.sideralOrbit))}  days</span></li>
-        <li className='font-lato font-bold'>Temperature :  <span>{data.avgTemp} K</span></li>
-        <li className='font-lato font-bold'>Density :  <span>{data.density} g/cm³</span></li>
-      </ul>
+      <iframe
+        src="https://giphy.com/embed/dusXWjr4Wn5YiNNZpd"
+        className="giphy-embed  w-[350px] h-[350px] sm:w-[480px] sm:h-[480px] m-auto"
+        allowFullScreen
+      ></iframe>
+      </div>
+      {/* <p>
+        <a href="https://giphy.com/gifs/after-effects-form-trapcode-dusXWjr4Wn5YiNNZpd"></a>
+      </p> */}
+
+      <div className="sm:w-[80%] text-sm text-white font-medium space-y-4 px-10">
+        <p className="">
+          <span className="text-2xl font-lato uppercase text-[#3a3b3d] font-light">Planet Earth</span>, located approximately 150 million kilometers (93
+          million miles) from the Sun, occupies a pivotal position in our solar
+          system. Its distance ensures a temperate climate conducive to life,
+          maintained by a unique atmosphere primarily composed of nitrogen and
+          oxygen. Earth's surface, encompassing 71% water and 29% landmass,
+          supports a breathtaking diversity of ecosystems, from lush rainforests
+          to expansive deserts.
+        </p>
+        <p>
+          The planet's rotation, completing one revolution every 24 hours,
+          creates day and night cycles essential for life's rhythms. Geological
+          processes, including plate tectonics and volcanic activity,
+          continuously shape its surface, while its magnetic field shields us
+          from solar winds and cosmic rays. Earth is not only a beacon of
+          natural beauty but also a testament to the intricate balance of
+          physical forces that sustain our existence in the vastness of space.
+        </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default EarthInfo
+export default EarthInfo;

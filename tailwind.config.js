@@ -7,7 +7,9 @@ export default {
         lato: ["lato", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
         PtSans: ["PT Sans", "sans-serif"],
-        "space-age": ["sans-serif"],
+        "sans-serif": ["sans-serif"],
+        "space-age" : ["Space Age", "sans-serif"],
+        orbitron: [ "Orbitron", "sans-serif"],
       },
       screens: {
         xxs: "400px",
@@ -26,6 +28,8 @@ export default {
           "radial-gradient(circle at center, #000 30%, #111 70%, #000 100%)",
         "stargazing-bg": "url('/assets/stargazing-guide-bg.jpg')",
         earth: "url(/assets/earth-night-bg.jpg)",
+        "explore-heading":
+          "linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(240, 240, 240, 0.9))",
       },
       colors: {
         cardsCustomGray: "rgba(31, 29, 29, 0.406)",
