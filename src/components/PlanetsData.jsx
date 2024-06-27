@@ -15,7 +15,7 @@ function PlanetsData({showPlanetInfo, planets, currentPlanet, data, planetDef}) 
       <li className='font-lato font-medium'>Gravity<li >{data.gravity} m/s²</li></li>
       
       </ul> </div>
-      <p className={`w-[50%] hidden lg:block text-sm tracking-wide lowercase  transition-opacity duration-[2000ms]`}>{planetDef.extract}</p>
+      <p className={`w-[50%] hidden lg:block text-sm tracking-wide lowercase`}>{planetDef.extract}</p>
   <div className='' id="physical-info"> 
   <ul className='leading-8'>
   <li className='font-lato font-medium'>Axial Tilt<li >{`${Math.round(data.axialTilt * 10)/10}\u00B0`}</li></li>

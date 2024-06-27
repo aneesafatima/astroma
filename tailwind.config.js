@@ -10,6 +10,7 @@ export default {
         "sans-serif": ["sans-serif"],
         "space-age" : ["Space Age", "sans-serif"],
         orbitron: [ "Orbitron", "sans-serif"],
+        "star-jedi": [ "Star Jedi", "sans-serif"],
       },
       screens: {
         xxs: "400px",

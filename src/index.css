@@ -7,6 +7,11 @@
     font-family: 'Space Age';
     src: url('/fonts/space_age/space-age.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Star Jedi';
+    src: url('/fonts/star_jedi/stjedise/STJEDISE.TTF') format('truetype');
+}
+
 html{
     scroll-behavior: smooth;
 }
