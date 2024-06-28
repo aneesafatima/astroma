@@ -67,7 +67,7 @@ function HomePage() {
         </div>
       </div>
         <EarthInfo />
-      <div className="relative h-[80vh]">
+      <div className="relative h-screen sm:h-[80vh]">
         <h1 className="absolute z-20 bg-explore-heading text-transparent bg-clip-text text-center left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2  leading-loose font-star-jedi font-light text-3xl xxs:text-5xl sm:text-8xl">
           explore space with us
         </h1>

@@ -96,7 +96,7 @@ function Planets() {
         style={{ backgroundColor: planets[currentPlanet].bgColor }}
       >
         <button
-          className={`${showPlanetInfo ? "block" : "hidden"} absolute left-10 top-20 uppercase opacity-50 cursor-pointer hover:opacity-100 translate-y-0 transition-all hover:-translate-y-1 hover:text-shadow bg-transparent text-xs`}
+          className={`${showPlanetInfo ? "block" : "hidden"} absolute left-10 top-20 uppercase opacity-50 cursor-pointer hover:opacity-100 translate-y-0 transition-all hover:-translate-y-1 hover:text-shadow bg-transparent text-xs font-bold`}
           onClick={removePlanetInfo}
           style={{ color: planets[currentPlanet].textColor }}
         >
@@ -125,7 +125,7 @@ function Planets() {
           id="planet-info-container"
         >
           <h1
-            className={`font-sans-serif text-7xl md:text-9xl opacity-0  left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  transition-all duration-1000 sm:tracking-wide ${showPlanetInfo ? "text-6xl relative my-7 lg:absolute lg:top-[11%] " : " absolute top-[15%] xss:top-[15%] md:top-[11%]"}`}
+            className={`font-sans-serif text-8xl  md:text-9xl opacity-0  left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  transition-all duration-1000 tracking-tighter sm:tracking-wide lg:mb-9 ${showPlanetInfo ? "text-[75px] relative  lg:absolute lg:top-[11%] " : " absolute top-[15%] xss:top-[15%] md:top-[11%]"}`}
             style={{
               color: showPlanetInfo
                 ? planets[currentPlanet].textColor
@@ -164,7 +164,7 @@ function Planets() {
         </div>
 
         <div
-          className={`order-1  ${!showPlanetInfo ? "w-[80vw] h-[80vw] top-[40%] absolute left-1/2 -translate-x-1/2" : "w-[50vw] h-[50vw] relative m-auto md:w-[45vw] md:h-[45vw] lg:absolute left-1/2 -translate-x-1/2 lg:top-[70%] "} rounded-full transition-all duration-1000
+          className={`order-1  ${!showPlanetInfo ? "w-[80vw] h-[80vw] top-[40%] absolute left-1/2 -translate-x-1/2" : "w-[50vw] h-[50vw] relative m-auto md:w-[45vw] md:h-[45vw] lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-[70%] "} rounded-full transition-all duration-1000
        shadow-planet-shadow object-cover  animate-rotate`}
         >
           <img
