@@ -13,7 +13,7 @@ export default {
         "star-jedi": [ "Star Jedi", "sans-serif"],
       },
       screens: {
-        xxs: "400px",
+        xxs: "450px",
         xs: "500px",
         sm: "640px",
         md: "941px",

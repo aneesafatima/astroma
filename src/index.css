@@ -1,53 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 
 @font-face {
-    font-family: 'Space Age';
-    src: url('/fonts/space_age/space-age.ttf') format('truetype');
+  font-family: "Space Age";
+  src: url("/fonts/space_age/space-age.ttf") format("truetype");
 }
 @font-face {
-    font-family: 'Star Jedi';
-    src: url('/fonts/star_jedi/stjedise/STJEDISE.TTF') format('truetype');
+  font-family: "Star Jedi";
+  src: url("/fonts/star_jedi/stjedise/STJEDISE.TTF") format("truetype");
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-.text-shadow{
-    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+.text-shadow {
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
 }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 #planets-info ul > li > li {
-    text-transform: lowercase;
-    font-weight: bold;
-    color : #FF4500;
-    }
-
-#earth-info  li > span{
-    color:#fff;
-    font-weight: 300;
-}    
-
-#tag{
-    color: #FF4500;
-}
-.active{
-color: white;
+  text-transform: lowercase;
+  font-weight: bold;
+  color: #ff4500;
 }
 
-#events-list span{
-    color : white;
+#earth-info li > span {
+  color: #fff;
+  font-weight: 300;
 }
 
-/* .weather-info :not(span){
-    font-weight: 800;
-} */
-/* 
-body{
-    color: #353434be;
-} */
+#tag {
+  color: #ff4500;
+}
+.active {
+  color: white;
+}
+
+#events-list span {
+  color: white;
+}
+
+.items-scrollbar::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.items-scrollbar::-webkit-scrollbar-track {
+  background: #1f1e1e; /* color of the track */
+}
+
+.items-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #808080; /* color of the scroll thumb */
+  border-radius: 6px; /* roundness of the scroll thumb */
+  border: 3px solid #1f1e1e; /* creates padding around thumb */
+}
+
+.items-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* color of the scroll thumb on hover */
+}
+
+.main-scrollbar::-webkit-scrollbar{
+    width:0px;
+}
