@@ -38,7 +38,7 @@ function StargazingGuide() {
           Explore the
           <span className="font-serif italic font-light">Night</span> Sky....
         </h2>
-        <p className=" w-[80%] text-xs leading-5 sm:text-sm sm:w-[60%] lg:text-lg lg:w-1/2 font-semibold">
+        <p className="w-[80%] text-xs leading-5 sm:text-sm sm:w-[60%] lg:text-[16px] lg:w-1/2 font-semibold text-center">
           Embark on a celestial journey with us as we explore the wonders of the
           night sky. From dazzling constellations to the mysterious depths of
           distant galaxies, let's uncover the beauty and mysteries that unfold
