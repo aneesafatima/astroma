@@ -28,8 +28,9 @@ function Constellations({ geoData }) {
     console.log(constellation);
   }, [geoData, constellation]);
 
+
   return (
-    !isLoading && (
+   
       <div
         className=" h-fit bg-black font-lato  py-20 space-y-5"
         id="constellations"
@@ -52,14 +53,16 @@ function Constellations({ geoData }) {
           <option value="sco">Scorpius</option>
           <option value="tau">Taurus</option>
         </select>
+        {isLoading && <div className="loader"></div>}
+       { !isLoading &&
         <img
           src={data?.data.imageUrl}
           alt="star chart"
           className="mt-10 w-[80%] object-contain sm:px-20 lg:px-40 m-auto rounded-lg"
-        />
+        />}
       </div>
     )
-  );
+  
 }
 
 export default Constellations;
