@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Events, Weather } from ".";
+import { Constellations, Events, Weather } from ".";
 
 function StargazingGuide() {
   const [geoData, setGeoData] = useState();
-//fix the elevation undefined error
   return (
     <div className="min-h-screen text-white">
       <nav className="fixed top-7 bg-[#2a2929b3] z-10 left-1/2 -translate-x-1/2 p-2 rounded-full cursor-pointer ">
@@ -15,10 +14,7 @@ function StargazingGuide() {
            <a href="#weather">Local Weather</a> 
           </li>
           <li className="hover:bg-[#181717b3] rounded-full py-2 px-3">
-            Moon phases
-          </li>
-          <li className="hover:bg-[#181717b3] rounded-full py-2 px-3">
-            Star Chart
+           <a href="#constellations">Constellations</a>
           </li>
         </ul>
       </nav>
@@ -41,6 +37,7 @@ function StargazingGuide() {
       </div>
       <Events geoData={geoData} setGeoData={setGeoData} />
       <Weather geoData={geoData} />
+      <Constellations geoData={geoData}/>
     </div>
   );
 }

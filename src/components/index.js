@@ -10,4 +10,6 @@ export { default as EarthInfo } from "./EarthInfo";
 export { default as Events } from "./Events";
 export { default as EventsItem } from "./EventsItem";
 export { default as Weather } from "./Weather";
-// export { default as MoonPhase } from ".";
+export { default as Loader } from "./Loader";
+export { default as Constellations } from "./Constellations";
+

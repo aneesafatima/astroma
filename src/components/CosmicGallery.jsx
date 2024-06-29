@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import {SearchBar, ArticleItems} from '.'
+import {SearchBar, ArticleItems, Loader} from '.'
 import {useGetArticlesByCategoryQuery} from '../services/astronomicalObjects';
-import { BallTriangle } from 'react-loader-spinner'
 import { MdOutlineSearchOff } from "react-icons/md";
 
 
 function CosmicGallery() {
+  console.log("Hello from cosmic gallery !")
   //hide scrollbar
 
   const [searchTerm , setSearchTerm] = useState("general");
@@ -21,14 +21,7 @@ const [coverArticleIndex, setCoverArticleIndex] = useState(0);
   return ( 
     <div className='bg-black min-h-screen relative px-5 pb-5 pt-5 transition-all main-scrollbar'> 
       <SearchBar setSearchTerm={setSearchTerm}/>
-      {isFetching &&  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"><BallTriangle
-      height={70}
-      width={70}
-      radius={3}
-      color="#808080"
-      ariaLabel="ball-triangle-loading"
-      visible={true}
-  /></div>  }
+      {isFetching &&  <Loader color="#808080"/>  }
 
       {!isFetching && data?.collection?.items.length === 0 && 
       <div className=" bg-green-300 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent text-[#808080] text-[1rem] sm:text-[2rem]">No results<MdOutlineSearchOff className='mx-3' color="#808080"/></div>}
@@ -40,14 +33,14 @@ const [coverArticleIndex, setCoverArticleIndex] = useState(0);
      <h3 className='text-white text-4xl font-light leading-[1.3] w-full text-center  md:w-[400px]'>
      {coverArticle?.data[0]?.title}
       </h3>
-      <img src={coverArticle?.links[0]?.href} className="w-[390px] h-72 mx-10 object-cover" alt="" />
+      <img src={coverArticle?.links[0]?.href} className="w-[390px] h-72 mx-10 object-cover" alt="article cover" />
      </div>
      <div className='w-full space-y-5'>
        <p className='text-[#808080] text-xs leading-5 mt-5'>
    {   coverArticle?.data[0]?.description}
       </p>
       <ul className='text-[#808080] flex text-xs pr-8' id="tag">
-        <li className='border-r-[1px] border-[#808080] px-5 flex space-x-1'>{coverArticle?.data[0]?.keywords?.map((el, i) => { if(i<2) return (<li>{el + `${i!==1 ? "," : ""}`}</li>)}) ?? "Space and Universe"}</li>
+        <li className='border-r-[1px] border-[#808080] px-5 flex space-x-1'>{coverArticle?.data[0]?.keywords?.map((el, i) => { if(i<2) return (<li key={i}>{el + `${i!==1 ? "," : ""}`}</li>)}) ?? "Space and Universe"}</li>
         <li className='border-r-[1px] border-[#808080] px-5 '>{coverArticle?.data[0]?.photographer?.split("/")[1] ?? "unknown"}</li>
         <li className='px-5 '>{new Date(coverArticle?.data[0]?.date_created).toLocaleDateString()
 }</li>

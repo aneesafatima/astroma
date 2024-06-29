@@ -51,7 +51,7 @@ export default {
         },
       },
       animation: {
-        rotate: "rotate 25s linear alternate infinite",
+        rotate: "rotate 25s linear 0.7s alternate infinite",
       },
       transitionProperty: {
         top: "top",

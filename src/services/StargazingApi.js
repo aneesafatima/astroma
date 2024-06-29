@@ -46,12 +46,13 @@ export const eventsApi = createApi({
       },
     }),
 
-    getStarChartPhase : builder.mutation({
-      query: (requestedData) => ({
-        url : '/studio/star-chart',
+    getStarChart : builder.mutation({
+      query: requestedData => {
+        console.log(requestedData)
+      return {  url : '/studio/star-chart',
         method : "POST",
-        body : requestedData
-      })
+        body : requestedData}
+      }
     })
   }),
 });

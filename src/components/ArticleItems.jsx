@@ -60,7 +60,7 @@ function ArticleItems({
                     {el.data[0].keywords?.map((keyword, i) => {
                       if (i < 2)
                         return (
-                          <span className="">
+                          <span key={i}>
                             {keyword + `${i !== 1 ? "," : ""}`}
                           </span>
                         );
@@ -74,16 +74,6 @@ function ArticleItems({
         })}
       </ul>
 
-      {/* <div className='hidden md:flex flex-col fixed right-10 h-[85vh] justify-between bottom-2'>
-      <div className='hidden md:flex flex-col fixed right-10 h-[85vh] justify-between bottom-2'>
-        <CiCircleChevDown color="white" size={30} className='cursor-pointer hover:scale-95 active:scale-95 ' onClick={scrollItemsUp} />
-        <CiCircleChevUp color="white" className='hover:scale-95 active:scale-95 cursor-pointer' onClick={scrollItemsDown} size={30} />
-      </div> */}
-     
-      {/* <div className='flex w-full flex-col fixed right-10 h-[85vh] justify-between bottom-0 '>
-        <CiCircleChevDown color="white" size={30} className='cursor-pointer hover:scale-95 active:scale-95 ' onClick={scrollItemsUp} />
-        <CiCircleChevUp color="white" className='hover:scale-95 active:scale-95 cursor-pointer' onClick={scrollItemsDown} size={30} />
-      </div> */}
     </div>
   );
 }
