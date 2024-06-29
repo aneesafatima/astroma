@@ -65,3 +65,18 @@ html {
     width:0px;
 }
 
+
+.loader {
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin: 10px auto;
+  border: 6px solid;
+  border-color: #242323 #0000;
+  animation: l1 1s infinite;
+}
+@keyframes l1 {to{transform: rotate(.5turn)}}
+
+/* body{
+  color: #4d4c4c96;
+} */

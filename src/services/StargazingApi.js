@@ -1,7 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-
-
 export const locationApi = createApi({
   reducerPath: "locationApi",
   baseQuery: fetchBaseQuery({
@@ -10,7 +8,6 @@ export const locationApi = createApi({
   endpoints: (builder) => ({
     getElevation: builder.query({
       query: ({ lat, lng }) => {
-        
         return `/lookup?locations=${lat},${lng}`;
       },
     }),
@@ -25,8 +22,8 @@ export const eventsApi = createApi({
       const authString = btoa(
         `${import.meta.env.VITE_REACT_APP_ASTRONOMY_API_ID}:${import.meta.env.VITE_REACT_APP_ASTRONOMY_API_SECRET_KEY}`
       );
-  
-      headers.set('Authorization',` Basic ${authString}`);
+
+      headers.set("Authorization", ` Basic ${authString}`);
       return headers;
     },
   }),
@@ -46,18 +43,18 @@ export const eventsApi = createApi({
       },
     }),
 
-    getStarChart : builder.mutation({
-      query: requestedData => {
-        console.log(requestedData)
-      return {  url : '/studio/star-chart',
-        method : "POST",
-        body : requestedData}
-      }
-    })
+    getStarChart: builder.mutation({
+      query: (requestedData) => {
+        console.log(requestedData);
+        return {
+          url: "/studio/star-chart",
+          method: "POST",
+          body: requestedData,
+        };
+      },
+    }),
   }),
 });
 
-
 export const { useGetElevationQuery } = locationApi;
 export const { useGetEventsApiQuery, useGetStarChartMutation } = eventsApi;
-

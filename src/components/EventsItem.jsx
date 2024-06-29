@@ -27,15 +27,10 @@ function EventsItem({ starBody, geoData, setGeoData }) {
     }
   );
 
-  console.log(events)
- 
-  // const date = new Date(event?.eventHighlights.peak.date);
-
   // {lat: 22.57609973033708, lng: 88.35774399379065}
   useEffect(() => {
-   
     setGeoData({ lat: "22.57609973033708", lng: "88.35774399379065" });
-    
+
     getLocation()
       .then((val) => {
         setGeoData({ lat: val.latitude, lng: val.longitude });
@@ -43,52 +38,53 @@ function EventsItem({ starBody, geoData, setGeoData }) {
       .catch((error) => console.log(error.code));
   }, []);
 
-  if (events?.data.table.rows[0].cells.length === 0)
+  if (isElevationLoading || isEventsLoading)
+    return <div className="loader"></div>;
+
+  else if (events?.data.table.rows[0].cells.length === 0)
     return (
       <div className="text-center text-[#7e7c7c]">
-        {" "}
         none <CiNoWaitingSign style={{ display: "inline" }} />
       </div>
     );
+
   return (
-    !isElevationLoading &&
-    !isEventsLoading &&
-    events?.data.table.rows[0].cells.length !== 0 &&
     events?.data.table.rows[0].cells.map((event) => (
-      <ul className="flex flex-col p-3 font-lato space-y-2" id="events-list">
+      <ul className=" flex flex-col p-3 font-lato space-y-2" id="events-list">
         <li
           className={`border-t border-b border-[#7e7c7c] p-3 ${starBody === "sun" ? "text-[#ff6f3c]" : "text-[#e3e3e3]"}`}
         >
           <div>
             Name :
-            <span className="font-light ml-1">
+            <span className="font-light  ml-2">
               {event?.type.split("_").join(" ")}
             </span>
           </div>
 
           <div className="events-info space-y-1">
-            <div className="flex justify-between">
+            <div className="flex justify-between flex-wrap sm:flex-nowrap sm:space-x-16">
               <div className="">
                 Time :
-                <span className="font-light">
-                  {" "}
+                <span className="font-light ml-2">
                   {`${new Date(event.eventHighlights.peak.date)?.getHours()} : ${new Date(event.eventHighlights.peak.date)?.getMinutes()} : ${new Date(event.eventHighlights.peak.date)?.getSeconds()}`}
                 </span>
               </div>
               <div>
                 Altitude :
-                <span className="font-light">
-                  {" "}
+                <span className="font-light ml-2">
+                 
                   {event?.eventHighlights.peak.altitude} m
                 </span>
               </div>
             </div>
 
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center flex-wrap space-y-2 sm:space-y-0 ">
               <div className="">
                 Date :
-                <span className="font-light">
-                  {new Date(event.eventHighlights.peak.date)?.toLocaleDateString("en-US", {
+                <span className="font-light  ml-2">
+                  {new Date(
+                    event.eventHighlights.peak.date
+                  )?.toLocaleDateString("en-US", {
                     month: "long",
                     year: "numeric",
                     day: "numeric",
@@ -98,7 +94,7 @@ function EventsItem({ starBody, geoData, setGeoData }) {
               <div className="flex space-x-4 ">
                 <div className="flex flex-col items-center justify-around">
                   <TbSunrise />
-                  <span className="text-xs">
+                  <span className="text-xs ">
                     {new Date(event?.rise).getHours().toString().padStart(2, 0)}
                     :
                     {new Date(event?.rise)
