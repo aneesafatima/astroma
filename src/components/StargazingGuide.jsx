@@ -4,8 +4,6 @@ import { getLocation } from "../helpers";
 function StargazingGuide() {
   const [geoData, setGeoData] = useState();
   useEffect(() => {
-    // setGeoData({ lat: "22.57609973033708", lng: "88.35774399379065" });
-
     getLocation()
       .then((val) => {
         setGeoData({ lat: val.latitude, lng: val.longitude });

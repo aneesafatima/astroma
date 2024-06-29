@@ -89,7 +89,7 @@ function Planets() {
 
   return (
     <div
-      className={` px-12 md:px-16  overflow-hidden transition-all ${showPlanetInfo ? "pb-10 min-h-screen flex flex-col items-center lg:block lg:h-screen" : "h-screen"}`}
+      className={`px-12 md:px-16  overflow-y-hidden transition-all ${showPlanetInfo ? "pb-8 min-h-screen flex flex-col items-center lg:block lg:h-screen " : "h-screen"}`}
       style={{ backgroundColor: planets[currentPlanet].bgColor }}
     >
       {isFetching && isLoading && (
@@ -166,8 +166,8 @@ function Planets() {
           </div>
 
           <div
-            className={`order-1 mt-6 lg:mt-0 ${!showPlanetInfo ? "w-[80vw] h-[80vw] top-[40%] absolute left-1/2 -translate-x-1/2" : "w-[50vw] h-[50vw] relative m-auto md:w-[45vw] md:h-[45vw] lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-[70%] "} rounded-full transition-all duration-1000
-        shadow-planet-shadow object-cover  animate-rotate`}
+            className={`order-1 mt-4 lg:mt-0 ${!showPlanetInfo ? "w-[80vw] h-[80vw] top-[40%] absolute left-1/2 -translate-x-1/2" : "w-[50vw] h-[50vw] relative m-auto md:w-[45vw] mt-14 md:h-[45vw] lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-[70%] "} rounded-full transition-all duration-1000
+        shadow-planet-shadow object-cover mb-7 animate-rotate`}
           >
             <img
               src={planets[currentPlanet].image}
