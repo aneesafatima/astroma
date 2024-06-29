@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Constellations, Events, Weather } from ".";
-
+import { getLocation } from "../helpers";
 function StargazingGuide() {
   const [geoData, setGeoData] = useState();
+  useEffect(() => {
+    // setGeoData({ lat: "22.57609973033708", lng: "88.35774399379065" });
+
+    getLocation()
+      .then((val) => {
+        setGeoData({ lat: val.latitude, lng: val.longitude });
+      })
+      .catch((error) =>alert("Location access is needed to provide data"));
+  }, []);
   return (
     <div className="min-h-screen text-white">
       <nav className="fixed top-7 bg-[#2a2929b3] z-10 left-1/2 -translate-x-1/2 p-2 rounded-full cursor-pointer ">

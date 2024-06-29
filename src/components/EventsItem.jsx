@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { TbSunrise, TbSunset } from "react-icons/tb";
-import { getLocation } from "../helpers";
 import { CiNoWaitingSign } from "react-icons/ci";
 import {
   useGetElevationQuery,
@@ -28,15 +27,7 @@ function EventsItem({ starBody, geoData, setGeoData }) {
   );
 
   // {lat: 22.57609973033708, lng: 88.35774399379065}
-  useEffect(() => {
-    setGeoData({ lat: "22.57609973033708", lng: "88.35774399379065" });
-
-    getLocation()
-      .then((val) => {
-        setGeoData({ lat: val.latitude, lng: val.longitude });
-      })
-      .catch((error) => console.log(error.code));
-  }, []);
+  
 
   if (isElevationLoading || isEventsLoading)
     return <div className="loader"></div>;
