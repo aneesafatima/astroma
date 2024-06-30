@@ -14,7 +14,7 @@ function HomePage() {
 
   return (
     <>
-      <div className="bg-homepage-bg h-screen bg-no-repeat bg-cover bg-center relative font-lato pt-10 xs:pt-14 text-white">
+      <nav className="bg-homepage-bg h-screen bg-no-repeat bg-cover bg-center relative font-lato pt-10 xs:pt-14 text-white">
         <ul
           className={` flex flex-col items-center space-y-10 xs:space-y-0 xs:flex-row justify-center uppercase xs:space-x-7 sm:space-x-10 text-xs sm:text-sm font-light  opacity-${visible ? "1" : "0"} transition-opacity duration-700  ease-in`}
         >
@@ -44,7 +44,7 @@ function HomePage() {
         >
           Astronomy
         </h1>
-      </div>
+      </nav>
       <div className="  bg-gradient-to-br from-gray-400 via-transparent bg-black to-black">
         <div
           className={`bg-transparent flex flex-wrap   ${showAbout ? "w-full opacity-1" : "w-0 opacity-0"} transition-all duration-1000  ease-in-out `}
@@ -83,7 +83,7 @@ function HomePage() {
      </video>
       </div>
       <Features />
-      <div className="bg-black pb-5"><button className="block px-3 py-2 w-fit m-auto bg-[#e2e2e233] text-white text-xs rounded-lg"><a href="https://github.com/aneesa04/astroma.git" target="_blank"><FiGithub color="white" className="inline mr-2"/>Created by Aneesa </a></button></div>
+      <footer className="bg-black pb-5"><button className="block px-3 py-2 w-fit m-auto bg-[#e2e2e233] text-white text-xs rounded-lg"><a href="https://github.com/aneesa04/astroma.git" target="_blank"><FiGithub color="white" className="inline mr-2"/>Created by Aneesa </a></button></footer>
     </>
   );
 }

@@ -20,7 +20,7 @@ function CosmicGallery() {
       {!isFetching && data?.collection?.items.length === 0 && (
         <div className=" bg-green-300 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent text-[#808080] text-[1rem] sm:text-[2rem]">
           No results
-          <MdOutlineSearchOff className="mx-3" color="#808080" />
+          <MdOutlineSearchOff className="mx-3 inline" color="#808080" />
         </div>
       )}
 
