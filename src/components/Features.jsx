@@ -7,7 +7,7 @@ import weatherIcon from "/assets/weather.png";
 
 function Features() {
   return (
-    <div className="features bg-black font-roboto text-white flex justify-around flex-wrap items-center px-8 py-24 space-y-10">
+    <div className="features bg-black font-roboto text-white flex justify-around flex-wrap items-center px-8 py-24 space-y-10 pointer-events-none">
       <div className="sm:w-[30%] space-y-4">
         <p className="uppercase text-sm font-semibold tracking-wide w-full sm:w-fit">
           Features

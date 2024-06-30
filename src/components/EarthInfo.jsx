@@ -4,8 +4,8 @@ function EarthInfo() {
   // const { data, isFetching } = useGetPlanetInfoQuery("earth");
 
   return (
-    <div className="md:h-screen min-h-screen bg-black flex flex-wrap md:flex-nowrap items-center justify-center py-16 xxs:px-10 sm:px-0 md:pr-10 text-[#717070] ">
-      <div className="w-full pointer-events-none">
+    <div className="md:h-screen min-h-screen bg-black flex flex-wrap md:flex-nowrap items-center justify-center py-16 xxs:px-10 sm:px-0 md:pr-10 text-[#717070] pointer-events-none ">
+      <div className="w-full">
         <iframe
           src="https://giphy.com/embed/dusXWjr4Wn5YiNNZpd"
           className="giphy-embed  w-[350px] h-[350px] sm:w-[480px] sm:h-[480px] m-auto"
