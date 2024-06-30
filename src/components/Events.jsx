@@ -8,10 +8,12 @@ function Events({ geoData, setGeoData }) {
   const [starBody, setStarBody] = useState("sun");
   const { data, isFetching } = useGetPlanetInfoQuery(starBody);
 
-
   return (
     !isFetching && (
-      <div className="bg-black h-fit px-7 xxs:px-10 py-16 sm:px-20 scroll-smooth" id="events">
+      <div
+        className="bg-black h-fit px-7 xxs:px-10 py-16 sm:px-20 scroll-smooth"
+        id="events"
+      >
         <div className="bg-[#181717b3] h-full rounded-2xl flex flex-wrap justify-around  transition-all duration-1000  p-10">
           <div id="body-container" className="space-y-5">
             <div className="mb-6">
@@ -74,7 +76,10 @@ function Events({ geoData, setGeoData }) {
             </ul>
           </div>
 
-          <div className="w-full sm:w-[80%] md:w-fit space-y-2 py-4" id="events">
+          <div
+            className="w-full sm:w-[80%] md:w-fit space-y-2 py-4"
+            id="events"
+          >
             <h2 className="text-center uppercase tracking-wide ">
               Upcoming events
             </h2>

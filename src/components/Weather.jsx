@@ -16,7 +16,6 @@ function Weather({ geoData }) {
     }
   );
 
-  console.log(data);
   const { data: uvIndex, isFetching: isLoading } = useGetUvIndexQuery(
     { lat: geoData?.lat, lng: geoData?.lng },
     {
@@ -39,14 +38,20 @@ function Weather({ geoData }) {
             <div className="flex items-center">
               <img
                 src={`http://openweathermap.org/img/wn/${data?.weather[0].icon}@2x.png`}
-                className=""
                 alt="weather icon"
               />
               <h2
                 className={`text-7xl md:text-8xl font-extrabold font-lato`}
               >{`${Math.round(data?.main.temp - 273.15)}\u00B0 C`}</h2>
             </div>
-              <span className=" text-[#7e7c7c] sm:text-xs mt-4"><VscTelescope size={20} className="inline mx-2"/>{data?.clouds.all <=30 ? "good stargazing conditions" : data?.clouds.all <=70 ? "moderate stargaziong conditions" : "poor stargazing conditions"}</span>
+            <span className=" text-[#7e7c7c] sm:text-xs mt-4">
+              <VscTelescope size={20} className="inline mx-2" />
+              {data?.clouds.all <= 30
+                ? "good stargazing conditions"
+                : data?.clouds.all <= 70
+                  ? "moderate stargaziong conditions"
+                  : "poor stargazing conditions"}
+            </span>
           </section>
 
           <section className="flex weather-info py-8 px-5 flex-wrap sm:flex-nowrap sm:px-20  pointer-events-none space-y-5 sm:space-y-0">

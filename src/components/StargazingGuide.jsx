@@ -8,14 +8,11 @@ function StargazingGuide() {
       .then((val) => {
         setGeoData({ lat: val.latitude, lng: val.longitude });
       })
-      .catch((error) => {alert("Location access is needed to provide data")  
-      }
-    
-    
-    );
+      .catch((error) => {
+        alert("Location access is needed to provide data");
+      });
   }, []);
 
-  
   return (
     <div className="min-h-screen text-white">
       <nav className="fixed top-7 bg-[#2a2929b3] z-10 left-1/2 -translate-x-1/2 p-2 rounded-full cursor-pointer ">
@@ -47,13 +44,22 @@ function StargazingGuide() {
         <button className="bg-white text-black px-2 py-1 sm:px-3 sm:py-2  shadow-btn-shadow rounded-2xl scale-100  text-[10px] sm:text-sm hover:scale-90 hover:shadow-btn-shadow-hover transition-all">
           <a href="#events">Get Started</a>
         </button>
-      </div>{
-      geoData === undefined && <div className="h-screen relative bg-black"> <span className="text-[#7e7c7c] font-lato block absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 z-20">Location access needed</span></div>}
-      { geoData !== undefined &&
-       <><Events geoData={geoData} setGeoData={setGeoData} />
-        <Weather geoData={geoData} />
-        <Constellations geoData={geoData} /></> 
-      }
+      </div>
+      {geoData === undefined && (
+        <div className="h-screen relative bg-black">
+          {" "}
+          <span className="text-[#7e7c7c] font-lato block absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 z-20">
+            Location access needed
+          </span>
+        </div>
+      )}
+      {geoData !== undefined && (
+        <>
+          <Events geoData={geoData} setGeoData={setGeoData} />
+          <Weather geoData={geoData} />
+          <Constellations geoData={geoData} />
+        </>
+      )}
     </div>
   );
 }
