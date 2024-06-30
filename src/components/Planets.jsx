@@ -92,7 +92,7 @@ function Planets() {
       className={`px-12 md:px-16 relative overflow-hidden transition-all ${showPlanetInfo ? "pb-8 lg:pb-0 min-h-screen flex flex-col items-center lg:block lg:h-screen " : "h-screen"}`}
       style={{ backgroundColor: planets[currentPlanet].bgColor }}
     >
-      {isFetching && isLoading && (
+      {(isFetching || isLoading) && (
         <Loader color={planets[currentPlanet].textColor} />
       )}
       {!isFetching && !isLoading && (
