@@ -123,7 +123,7 @@ function Planets() {
             style={{ backgroundColor: planets[currentPlanet].textColor }}
           ></span>
           <div
-            className={`flex ${!showPlanetInfo ? " justify-center items-center" : "justify-normal"}   order-2`}
+            className={`flex h-fit ${!showPlanetInfo ? " justify-center items-center" : "justify-normal"}   order-2`}
             id="planet-info-container"
           >
             <h1
