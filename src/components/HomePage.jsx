@@ -72,13 +72,15 @@ function HomePage() {
           explore space with us
         </h1>
         <video
-          src="/assets/space.mp4"
           autoPlay
           muted
           loop
           playsinline
+          preload="preload"
           className="w-full h-full object-cover brightness-90"
-        ></video>
+        ><source src="/assets/space.mp4" type="video/mp4">
+        Sorry, your browser does not support HTML5 video.</source>
+     </video>
       </div>
       <Features />
     </>
