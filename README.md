@@ -8,14 +8,14 @@ Astroma is an interactive web application that visualizes planetary information 
 - **Video Background:** The homepage features a stunning space-themed video background to create an immersive user experience.
 
 #### Planetary Information
-- **Detailed View:** Click on any planet to get detailed information, including its background, characteristics, and fun facts.
+- **Detailed View:** Click on any planet to get detailed information, including its background and characteristics.
 - **Interactive Navigation:** Use arrow buttons to navigate through different planets seamlessly.
 - **Dynamic Background:** The background color changes based on the selected planet, enhancing the visual experience.
 
 #### Cosmic Gallery
 - **Explore the Universe:** View a gallery of breathtaking cosmic images, showcasing nebulae, galaxies, and other celestial bodies.
 - **Image Details:** Click on images to get detailed information about each cosmic phenomenon.
-- **High-Quality Visuals:** Enjoy high-resolution images sourced from NASA and other space agencies.
+- **High-Quality Visuals:** Enjoy high-resolution images sourced from NASA.
 
 #### Stargazing 🌃
 - **Plan Your Journey:** Discover optimal stargazing routes based on your location and current astronomical events.
