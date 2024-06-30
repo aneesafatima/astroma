@@ -75,11 +75,10 @@ function HomePage() {
           autoPlay
           muted
           loop
-          playsinline
-          preload="preload"
+          playsInline
           className="w-full h-full object-cover brightness-90"
         ><source src="/assets/space.mp4" type="video/mp4">
-        Sorry, your browser does not support HTML5 video.</source>
+       </source>  Sorry, your browser does not support HTML5 video.
      </video>
       </div>
       <Features />
