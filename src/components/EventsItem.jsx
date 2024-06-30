@@ -26,8 +26,6 @@ function EventsItem({ starBody, geoData, setGeoData }) {
     }
   );
 
-  // {lat: 22.57609973033708, lng: 88.35774399379065}
-
   if (isElevationLoading || isEventsLoading)
     return <div className="loader"></div>;
   else if (events?.data.table.rows[0].cells.length === 0)
@@ -37,8 +35,8 @@ function EventsItem({ starBody, geoData, setGeoData }) {
       </div>
     );
 
-  return events?.data.table.rows[0].cells.map((event) => (
-    <ul className=" flex flex-col p-3 font-lato space-y-2" id="events-list">
+  return events?.data.table.rows[0].cells.map((event, i) => (
+    <ul className=" flex flex-col p-3 font-lato space-y-2" id="events-list" key={i}>
       <li
         className={`border-t border-b border-[#7e7c7c] p-3 ${starBody === "sun" ? "text-[#ff6f3c]" : "text-[#e3e3e3]"}`}
       >

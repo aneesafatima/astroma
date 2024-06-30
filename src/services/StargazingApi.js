@@ -37,15 +37,13 @@ export const eventsApi = createApi({
         const currentTime = new Date().toLocaleTimeString("en-US", {
           hour12: false,
         });
-        // {lat: 22.57609973033708, lng: 88.35774399379065}
-
+       console.log(toDate)
         return `/bodies/events/${body}?latitude=${lat}&longitude=${lng}&elevation=${elevation}&from_date=${fromDate}&to_date=${toDate}&time=${currentTime}`;
       },
     }),
 
     getStarChart: builder.mutation({
       query: (requestedData) => {
-        console.log(requestedData);
         return {
           url: "/studio/star-chart",
           method: "POST",

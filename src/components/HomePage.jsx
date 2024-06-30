@@ -39,7 +39,7 @@ function HomePage() {
           </li>
         </ul>
         <h1
-          className={`font-lato text-[rgba(245, 245, 245, 0.724)] font-extralight tracking-[10px] sm:tracking-[27px] absolute bottom-[10%] sm:bottom-[8%] left-1/2 -translate-x-1/2 uppercase text-2xl xs:text-4xl sm:text-5xl md:text-6xl opacity-${visible ? "1" : "0"} transition-opacity duration-700  ease-in`}
+          className={`font-lato text-[rgba(245, 245, 245, 0.724)] text-center font-extralight tracking-[15px] sm:tracking-[27px] absolute bottom-[10%] sm:bottom-[8%] left-1/2 -translate-x-1/2 uppercase text-2xl xs:text-4xl sm:text-5xl md:text-6xl opacity-${visible ? "1" : "0"} transition-opacity duration-700  ease-in`}
         >
           Astronomy
         </h1>

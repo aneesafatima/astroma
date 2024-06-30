@@ -14,31 +14,11 @@ export const handleMouseleave = (planets, currentPlanet, showPlanetInfo) => {
   }`;
 };
 
-function showError(error) {
-  switch (error.code) {
-    case error.PERMISSION_DENIED:
-      console.log(error.code);
-      break;
-    case error.POSITION_UNAVAILABLE:
-      console.log(error.code);
-      break;
-    case error.TIMEOUT:
-      console.log(error.code);
-      break;
-    case error.UNKNOWN_ERROR:
-      console.log(error.code);
-      break;
-  }
-}
-
 export function getLocation() {
-  console.log("Entered location function");
   return new Promise((resolve, reject) => {
     if (navigator.geolocation) {
-      console.log("got access to the location");
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          console.log("got the location from user");
           resolve({
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
@@ -47,7 +27,7 @@ export function getLocation() {
         (error) => reject(error)
       );
     } else {
-      console.log("GeoLocation is not supported");
+      alert("GeoLocation is not supported");
     }
   });
 }
