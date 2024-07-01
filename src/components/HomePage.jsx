@@ -40,7 +40,7 @@ function HomePage() {
           </li>
         </ul>
         <h1
-          className={`font-lato text-[rgba(245, 245, 245, 0.724)] text-center font-extralight tracking-[15px] sm:tracking-[27px] absolute bottom-[10%] sm:bottom-[8%] left-1/2 -translate-x-1/2 uppercase text-2xl xs:text-4xl sm:text-5xl md:text-6xl opacity-${visible ? "1" : "0"} transition-opacity duration-700  ease-in`}
+          className={`font-lato text-[rgba(245, 245, 245, 0.724)]  font-extralight tracking-[15px] sm:tracking-[27px] absolute bottom-[10%] w-full text-center sm:bottom-[8%]  uppercase text-2xl xs:text-4xl sm:text-5xl md:text-6xl opacity-${visible ? "1" : "0"} transition-opacity duration-700  ease-in`}
         >
           Astronomy
         </h1>
@@ -78,12 +78,20 @@ function HomePage() {
           loop
           playsInline
           className="w-full h-full object-cover brightness-90"
-        ><source src="/assets/space.mp4" type="video/mp4">
-       </source>  Sorry, your browser does not support HTML5 video.
-     </video>
+        >
+          <source src="/assets/space.mp4" type="video/mp4"></source> Sorry, your
+          browser does not support HTML5 video.
+        </video>
       </div>
       <Features />
-      <footer className="bg-black pb-5"><button className="block px-3 py-2 w-fit m-auto bg-[#e2e2e233] text-white text-xs rounded-lg"><a href="https://github.com/aneesa04/astroma.git" target="_blank"><FiGithub color="white" className="inline mr-2"/>Created by Aneesa </a></button></footer>
+      <footer className="bg-black pb-5">
+        <button className="block px-3 py-2 w-fit m-auto bg-[#e2e2e233] text-white text-xs rounded-lg">
+          <a href="https://github.com/aneesa04/astroma.git" target="_blank">
+            <FiGithub color="white" className="inline mr-2" />
+            Created by Aneesa{" "}
+          </a>
+        </button>
+      </footer>
     </>
   );
 }

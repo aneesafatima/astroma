@@ -82,14 +82,12 @@ function Planets() {
     setTimeout(() => {
       const line = document.getElementById("line");
       if (line) line.style.width = "100%";
-      const planet = document.getElementById("planet");
-      if (planet) planet.style.opacity = "1";
     }, 200);
   });
 
   return (
     <div
-      className={`px-12 md:px-16 relative overflow-hidden transition-all ${showPlanetInfo ? "pb-8 lg:pb-0 min-h-screen flex flex-col items-center lg:block lg:h-screen " : "h-screen"}`}
+      className={`px-12 md:px-16 relative overflow-hidden transition-all ${showPlanetInfo ? "pb-8 lg:pb-0 min-h-screen space-y-5 flex flex-col items-center lg:block lg:h-screen " : "h-screen"}`}
       style={{ backgroundColor: planets[currentPlanet].bgColor }}
     >
       {(isFetching || isLoading) && (
@@ -127,7 +125,7 @@ function Planets() {
             id="planet-info-container"
           >
             <h1
-              className={`font-sans-serif text-8xl  md:text-9xl opacity-0  left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  transition-all duration-1000 tracking-tighter sm:tracking-wide lg:mb-9 ${showPlanetInfo ? "text-[75px] relative mb-5 lg:absolute lg:top-[11%] " : " absolute top-[15%] xss:top-[15%] md:top-[11%]"}`}
+              className={`font-sans-serif text-8xl  md:text-9xl   left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  transition-all duration-1000 tracking-tighter sm:tracking-wide lg:mb-9 ${showPlanetInfo ? "text-[75px] relative lg:absolute lg:top-[11%] " : " absolute top-[15%] xss:top-[15%] md:top-[11%]"}`}
               style={{
                 color: showPlanetInfo
                   ? planets[currentPlanet].textColor
