@@ -87,7 +87,7 @@ function Planets() {
 
   return (
     <div
-      className={`px-12 md:px-16 relative overflow-hidden transition-all ${showPlanetInfo ? "pb-8 lg:pb-0 min-h-screen space-y-5 flex flex-col items-center lg:block lg:h-screen " : "h-screen"}`}
+      className={`px-12 md:px-16 relative overflow-hidden transition-all ${showPlanetInfo ? "pb-8 lg:pb-0 min-h-screen  flex flex-col items-center lg:block lg:h-screen " : "h-screen"}`}
       style={{ backgroundColor: planets[currentPlanet].bgColor }}
     >
       {(isFetching || isLoading) && (
@@ -125,7 +125,7 @@ function Planets() {
             id="planet-info-container"
           >
             <h1
-              className={`font-sans-serif text-8xl  md:text-9xl   left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  transition-all duration-1000 tracking-tighter sm:tracking-wide lg:mb-9 ${showPlanetInfo ? "text-[75px] relative lg:absolute lg:top-[11%] " : " absolute top-[15%] xss:top-[15%] md:top-[11%]"}`}
+              className={`font-sans-serif text-8xl  md:text-9xl   left-1/2  z-10  -translate-x-1/2 cursor-default  bg-clip-text  transition-all duration-1000 tracking-tighter sm:tracking-wide lg:mb-9 ${showPlanetInfo ? "text-[75px] relative mb-5 lg:absolute lg:top-[11%] " : " absolute top-[15%] xss:top-[15%] md:top-[11%]"}`}
               style={{
                 color: showPlanetInfo
                   ? planets[currentPlanet].textColor
@@ -165,7 +165,7 @@ function Planets() {
 
           <div
             className={`order-1 lg:mt-0  ${!showPlanetInfo ? "w-[80vw] h-[80vw] top-[40%] absolute left-1/2 -translate-x-1/2" : "w-[50vw] h-[50vw] relative mx-auto md:w-[45vw] mt-14 md:h-[45vw] lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-[70%] "} rounded-full transition-all duration-1000
-        shadow-planet-shadow object-cover mb-7 animate-rotate`}
+        shadow-planet-shadow object-cover mb-5 animate-rotate`}
           >
             <img
               src={planets[currentPlanet].image}
