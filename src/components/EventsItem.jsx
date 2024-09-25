@@ -36,7 +36,11 @@ function EventsItem({ starBody, geoData, setGeoData }) {
     );
 
   return events?.data.table.rows[0].cells.map((event, i) => (
-    <ul className=" flex flex-col p-3 font-lato space-y-2" id="events-list" key={i}>
+    <ul
+      className=" flex flex-col p-3 font-lato space-y-2"
+      id="events-list"
+      key={i}
+    >
       <li
         className={`border-t border-b border-[#7e7c7c] p-3 ${starBody === "sun" ? "text-[#ff6f3c]" : "text-[#e3e3e3]"}`}
       >

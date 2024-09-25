@@ -11,10 +11,6 @@ function ArticleItems({
   const changeCoverArticle = (i) => {
     setCoverArticleIndex(i);
     setCoverArticle(data[i]);
-    setOffset(0);
-    [...document.getElementsByClassName("scroll-item")].forEach(
-      (el) => (el.style.transform = `translateY(0)`)
-    );
     articlesNum = 0;
   };
 

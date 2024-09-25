@@ -12,9 +12,6 @@ function EarthInfo() {
           allowFullScreen
         ></iframe>
       </div>
-      {/* <p>
-        <a href="https://giphy.com/gifs/after-effects-form-trapcode-dusXWjr4Wn5YiNNZpd"></a>
-      </p> */}
 
       <div className="sm:w-[80%] text-sm text-white font-medium space-y-4 px-10">
         <p className="">

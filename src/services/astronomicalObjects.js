@@ -1,13 +1,14 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const articlesApi = createApi({
- reducerPath: 'articlesApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://images-api.nasa.gov' }),
+  reducerPath: "articlesApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://images-api.nasa.gov" }),
   endpoints: (builder) => ({
     getArticlesByCategory: builder.query({
-      query: (category) => `/search?q=${category}&media_type=image&year_start=${new Date().getFullYear()}`,
+      query: (category) =>
+        `/search?q=${category}&media_type=image&year_start=${new Date().getFullYear()}`,
     }),
   }),
-})
+});
 
-export const {useGetArticlesByCategoryQuery} = articlesApi;
+export const { useGetArticlesByCategoryQuery } = articlesApi;

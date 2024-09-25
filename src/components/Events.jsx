@@ -7,7 +7,7 @@ import { useGetPlanetInfoQuery } from "../services/planetsApi";
 function Events({ geoData, setGeoData }) {
   const [starBody, setStarBody] = useState("sun");
   const { data, isFetching } = useGetPlanetInfoQuery(starBody);
- 
+
   return (
     !isFetching && (
       <div

@@ -1,6 +1,5 @@
 import React from "react";
 import millify from "millify";
-
 function PlanetsData({
   showPlanetInfo,
   planets,

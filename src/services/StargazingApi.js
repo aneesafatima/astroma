@@ -37,7 +37,7 @@ export const eventsApi = createApi({
         const currentTime = new Date().toLocaleTimeString("en-US", {
           hour12: false,
         });
-       console.log(toDate)
+        console.log(toDate);
         return `/bodies/events/${body}?latitude=${lat}&longitude=${lng}&elevation=${elevation}&from_date=${fromDate}&to_date=${toDate}&time=${currentTime}`;
       },
     }),

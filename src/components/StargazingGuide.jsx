@@ -15,6 +15,7 @@ function StargazingGuide() {
 
   return (
     <div className="min-h-screen text-white">
+
       <nav className="fixed top-7 bg-[#2a2929b3] z-10 left-1/2 -translate-x-1/2 p-2 rounded-full cursor-pointer ">
         <ul className="flex space-x-1 text-xs md:text-sm text-center text-lato font-semibold items-center">
           <li className="hover:bg-[#181717b3] rounded-full py-2 px-3">

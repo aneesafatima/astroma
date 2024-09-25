@@ -24,7 +24,7 @@ function CosmicGallery() {
         </div>
       )}
 
-      {!isFetching && data?.collection?.items.length !== 0 && (
+      {!isFetching && data?.collection?.items.length !== 0 && coverArticle && (
         <div className="flex pt-10 flex-col spaxe-x-5 md:flex-row flex-wrap md:flex-nowrap space-y-6 ">
           <div className="flex mr-10 pr-4 space-y-6 justify-center md:justify-normal items-start flex-col flex-wrap w-full md:w-[70%]">
             <div className="w-full flex flex-col md:flex-row items-center space-x-3 space-y-6">
