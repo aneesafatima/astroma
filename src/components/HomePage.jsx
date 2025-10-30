@@ -28,11 +28,11 @@ function HomePage() {
               PLanetary hub
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/stargazing-guide" className="hover:text-gray-400">
               Stargazing
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/cosmic-gallery" className="hover:text-gray-400">
               Cosmic Gallery

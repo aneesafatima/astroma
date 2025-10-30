@@ -50,6 +50,7 @@ function Planets() {
   const { data, isFetching } = useGetPlanetInfoQuery(
     planets[currentPlanet].name
   );
+  console.log(data);
   const { data: planetDef, isFetching: isLoading } = useGetPlanetDefQuery(
     planets[currentPlanet].name
   );

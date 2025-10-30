@@ -53,7 +53,7 @@ function Events({ geoData, setGeoData }) {
               <li className="">
                 AXIAL TILT :
                 <li className="inline font-light text-white ml-2">
-                  {`${Math.round(data.axialTilt * 10) / 10}\u00B0`}
+                  {`${Math.round(data?.axialTilt * 10) / 10}\u00B0`}
                 </li>
               </li>
               <li className="">
@@ -63,13 +63,13 @@ function Events({ geoData, setGeoData }) {
               <li className="">
                 RADIUS :
                 <li className="inline font-light text-white ml-2">
-                  {data.meanRadius} km
+                  {data?.meanRadius} km
                 </li>
               </li>
               <li className="">
                 VOLUME :
                 <li className="inline font-light text-white ml-2">
-                  {data.vol.volValue} V☉
+                  {data?.vol.volValue} V☉
                 </li>
               </li>
               <li></li>

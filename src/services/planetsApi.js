@@ -4,7 +4,15 @@ export const planetsApi = createApi({
   reducerPath: "planetsApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://api.le-systeme-solaire.net/rest",
+    prepareHeaders: (headers) => {
+      headers.set(
+        "Authorization",
+        `Bearer ${import.meta.env.VITE_REACT_PLANETS_API_KEY}`
+      );
+      return headers;
+    },
   }),
+
   endpoints: (builder) => ({
     getPlanetInfo: builder.query({
       query: (planet) => `/bodies/${planet}`,
